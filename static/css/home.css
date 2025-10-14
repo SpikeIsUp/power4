@@ -35,13 +35,17 @@ body {
 
 .gear {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 20px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gear:hover {
+  transform: rotate(180deg) scale(1.2);
+  filter: drop-shadow(0 0 6px #38bdf8);
 }
 
 .logo {
@@ -51,9 +55,4 @@ body {
   right: 100px;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.gear:hover {
-  transform: rotate(180deg) scale(1.2);
-  filter: drop-shadow(0 0 6px #000000);
 }
