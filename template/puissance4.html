@@ -7,6 +7,13 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <h1>42 boutons</h1>
+
+    {{range $i := .Buttons}}
+    <form action="/click" method="POST" style="display:inline;">
+        <input type="hidden" name="id" value="{{$i}}">
+        <button type="submit">{{$i}}</button>
+    </form>
+    {{end}}
 </body>
 </html>
