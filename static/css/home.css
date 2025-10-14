@@ -37,20 +37,23 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
-  width: 7vw;
-  height: 7vh;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
-  transition: 0.2s;
 }
 
 .logo {
   position: absolute;
-  width: 60vw;
+  width: 900px;
   top: -50px;
   right: 100px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gear:hover {
+  transform: rotate(180deg) scale(1.2);
+  filter: drop-shadow(0 0 6px #000000);
 }
