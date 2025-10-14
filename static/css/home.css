@@ -8,10 +8,13 @@ body {
 
 .sidebar {
   display: grid;
-  grid-template-columns: repeat(2, 120px);
+  grid-template-columns: repeat(2, 160px);
+  grid-template-rows: repeat(4, 160px);
   gap: 22px;
-  width: 9vw;
-  height: 100vh;
+  padding: 20px;
+  border-right: 3px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  position: relative;
 }
 
 .btn {
@@ -20,7 +23,7 @@ body {
   align-items: center;
   border: 2px solid black;
   border-radius: 50%;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.2s;
   background: #fafafa;
@@ -35,12 +38,18 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
-  width: 25px;
-  height: 25px;
-  border: 2px solid black;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logo {
+  position: absolute;
+  width: 900px;
+  top: -50px;
+  right: 100px;
+  cursor: pointer;
+  transition: 0.2s;
 }
