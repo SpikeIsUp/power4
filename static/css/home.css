@@ -15,6 +15,16 @@ body {
   overflow: hidden;
 }
 
+.plateau {
+  width: 1000px;
+  height: 2000px;
+  border-radius: 10px;
+  background-image: url("..static/image/fond_rouge_power4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .gear {
   position: absolute;
   top: 20px;

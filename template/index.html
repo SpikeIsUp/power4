@@ -12,30 +12,22 @@
       src="../static/image/fond_bleu_home.png"
       alt="background"
     />
+
     <div class="gauche">
       <svg width="1000" height="2000">
-        <!-- Masque : noir = transparent, blanc = visible -->
         <mask id="holes">
-          <rect width="380" height="780" fill="white" />
-          <circle cx="95" cy="95" r="25" fill="black" />
-          <circle cx="120" cy="40" r="25" fill="black" />
-          <circle cx="40" cy="100" r="25" fill="black" />
-          <circle cx="120" cy="100" r="25" fill="black" />
-          <circle cx="40" cy="160" r="25" fill="black" />
-          <circle cx="120" cy="160" r="25" fill="black" />
-          <circle cx="40" cy="220" r="25" fill="black" />
-          <circle cx="120" cy="220" r="25" fill="black" />
+          <rect width="27vw" height="100vh" fill="white" />
+          <circle cx="12.6vh" cy="7.63875vw" r="4vw" fill="black" />
+          <circle cx="37.905vh" cy="7.63875vw" r="4vw" fill="black" />
+          <circle cx="12.6vh" cy="19.09719vw" r="4vw" fill="black" />
+          <circle cx="37.905vh" cy="19.09719vw" r="4vw" fill="black" />
+          <circle cx="12.6vh" cy="30.6243vw" r="4vw" fill="black" />
+          <circle cx="37.905vh" cy="30.6243vw" r="4vw" fill="black" />
+          <circle cx="12.6vh" cy="42vw" r="4vw" fill="black" />
+          <circle cx="37.905vh" cy="42vw" r="4vw" fill="black" />
         </mask>
 
-        <!-- Plateau bleu avec masque -->
-        <rect
-          width="1000"
-          height="2000"
-          rx="10"
-          ry="10"
-          fill="#0a4d91"
-          mask="url(#holes)"
-        />
+        <rect class="tableau" width="1000" height="2000" mask="url(#holes)" />
       </svg>
     </div>
 
