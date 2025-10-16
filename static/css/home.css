@@ -15,54 +15,6 @@ body {
   overflow: hidden;
 }
 
-.sidebar {
-  display: grid;
-  grid-template-columns: repeat(2, 160px);
-  grid-template-rows: repeat(4, 160px);
-  gap: 22px;
-  padding: 20px;
-  border-right: 3px solid rgb(0, 0, 0);
-  box-sizing: border-box;
-  position: relative;
-  background-color: rgba(246, 0, 0, 0.478);
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  backdrop-filter: blur(8px);
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid black;
-  border-radius: 50%;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  color: black;
-  backdrop-filter: blur(4px);
-  background-image: url("../image/backgroundbtn.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.btn.inactive {
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.btn.active {
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-.btn.active:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  transform: scale(1.1);
-}
-
 .gear {
   position: absolute;
   top: 20px;
