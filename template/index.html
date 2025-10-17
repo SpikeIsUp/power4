@@ -14,77 +14,38 @@
     />
 
     <div class="gauche">
-      <svg
-        class="plateau"
-        width="27vw"
-        height="100vh"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg class="plateau" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern
             id="plateauImage"
             patternUnits="userSpaceOnUse"
-            width="27vw"
-            height="100vh"
+            width="100%"
+            height="100%"
           >
             <image
               href="../static/image/fond_rouge_power4.png"
-              width="27vw"
-              height="100vh"
+              width="100%"
+              height="100%"
               preserveAspectRatio="xMidYMid slice"
             />
           </pattern>
           <mask id="holes">
-            <rect width="27vw" height="100vh" fill="white" />
-            <circle
-              class="hole"
-              cx="12.6vh"
-              cy="7.63875vw"
-              r="4vw"
-              fill="black"
-            />
-            <circle
-              class="hole"
-              cx="37.905vh"
-              cy="7.63875vw"
-              r="4vw"
-              fill="black"
-            />
-            <circle
-              class="hole"
-              cx="12.6vh"
-              cy="19.09719vw"
-              r="4vw"
-              fill="black"
-            />
-            <circle
-              class="hole"
-              cx="37.905vh"
-              cy="19.09719vw"
-              r="4vw"
-              fill="black"
-            />
-            <circle
-              class="hole"
-              cx="12.6vh"
-              cy="30.6243vw"
-              r="4vw"
-              fill="black"
-            />
-            <circle
-              class="hole"
-              cx="37.905vh"
-              cy="30.6243vw"
-              r="4vw"
-              fill="black"
-            />
-            <circle class="hole" cx="12.6vh" cy="42vw" r="4vw" fill="black" />
-            <circle class="hole" cx="37.905vh" cy="42vw" r="4vw" fill="black" />
+            <rect width="100%" height="100%" fill="white" />
+            <circle class="hole" cx="25%" cy="12.5%" r="10%" fill="black" />
+            <circle class="hole" cx="25%" cy="37.5%" r="10%" fill="black" />
+            <circle class="hole" cx="25%" cy="62.5%" r="10%" fill="black" />
+            <circle class="hole" cx="25%" cy="87.5%" r="10%" fill="black" />
+
+            <circle class="hole" cx="75%" cy="12.5%" r="10%" fill="black" />
+            <circle class="hole" cx="75%" cy="37.5%" r="10%" fill="black" />
+            <circle class="hole" cx="75%" cy="62.5%" r="10%" fill="black" />
+            <circle class="hole" cx="75%" cy="87.5%" r="10%" fill="black" />
           </mask>
         </defs>
+
         <rect
-          width="27vw"
-          height="100vh"
+          width="100%"
+          height="100%"
           fill="url(#plateauImage)"
           mask="url(#holes)"
         />

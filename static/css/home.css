@@ -19,17 +19,17 @@ body {
   z-index: -1;
 }
 
-/* Panneau gauche */
 .gauche {
   width: 27vw;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .plateau {
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Panneau droit */
@@ -52,7 +52,7 @@ body {
 
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 6px #ddd60b);
+  filter: drop-shadow(0 0 6px #bebebe);
 }
 
 /* Icône du menu (gear) */
