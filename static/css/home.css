@@ -15,52 +15,39 @@ body {
   overflow: hidden;
 }
 
-.sidebar {
-  display: grid;
-  grid-template-columns: repeat(2, 160px);
-  grid-template-rows: repeat(4, 160px);
-  gap: 22px;
-  padding: 20px;
-  border-right: 3px solid rgb(0, 0, 0);
-  box-sizing: border-box;
+/* Panneau gauche */
+.gauche {
+  width: 27vw;
+  height: 100vh;
   position: relative;
-  background-color: rgba(246, 0, 0, 0.478);
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  backdrop-filter: blur(8px);
 }
 
-.btn {
+.plateau {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Panneau droit */
+.droite {
+  flex: 1;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
-  border-radius: 50%;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  color: black;
-  backdrop-filter: blur(4px);
-  background-image: url("../image/backgroundbtn.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-.btn.inactive {
-  pointer-events: none;
-  opacity: 0.6;
+.logo {
+  position: absolute;
+  width: 45vw;
+  top: 10vh;
+  right: 10vw;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.btn.active {
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-.btn.active:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  transform: scale(1.1);
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px #fedb18);
 }
 
 .gear {
@@ -76,14 +63,4 @@ body {
 .gear:hover {
   transform: rotate(180deg) scale(1.2);
   filter: drop-shadow(0 0 6px #38bdf8);
-}
-
-.logo {
-  display: flex;
-  position: absolute;
-  width: 900px;
-  top: -50px;
-  right: 100px;
-  cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
 }
