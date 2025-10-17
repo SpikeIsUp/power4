@@ -15,6 +15,11 @@ body {
   overflow: hidden;
 }
 
+.gauche {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
 /* Panneau droit */
 .droite {
   flex: 1;
