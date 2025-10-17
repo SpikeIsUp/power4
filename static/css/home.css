@@ -15,19 +15,6 @@ body {
   overflow: hidden;
 }
 
-/* Panneau gauche */
-.gauche {
-  width: 27vw;
-  height: 100vh;
-  position: relative;
-}
-
-.plateau {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 /* Panneau droit */
 .droite {
   flex: 1;
