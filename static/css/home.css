@@ -37,7 +37,6 @@ body {
   align-items: center;
 }
 
-/* Logo Power4 */
 .logo {
   position: absolute;
   width: 45vw;
@@ -51,7 +50,6 @@ body {
   filter: drop-shadow(0 0 15px #fedb18);
 }
 
-/* Icône du menu (gear) */
 .gear {
   position: absolute;
   top: 20px;
