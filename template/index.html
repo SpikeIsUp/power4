@@ -49,8 +49,39 @@
           fill="url(#plateauImage)"
           mask="url(#holes)"
         />
+        <image
+          id="jeton1"
+          href="../static/image/Jetons/Jeton4.png"
+          x="8.8%"
+          y="-3.59%"
+          width="32.7%"
+          height="32.7%"
+          style="cursor: pointer"
+        />
+        <image
+          id="jeton2"
+          href="../static/image/Jetons/Jeton5.png"
+          x="58.8%"
+          y="-3.59%"
+          width="32.5%"
+          height="32.5%"
+          style="cursor: pointer"
+        />
       </svg>
     </div>
+
+    <script>
+      const jeton1 = document.getElementById("jeton1");
+      const jeton2 = document.getElementById("jeton2");
+
+      jeton1.addEventListener("click", () => {
+        alert("Jeton 1 cliqué !");
+      });
+
+      jeton2.addEventListener("click", () => {
+        alert("Jeton 2 cliqué !");
+      });
+    </script>
 
     <div class="droite">
       <img
