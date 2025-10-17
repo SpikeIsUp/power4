@@ -3,11 +3,11 @@
 }
 
 body {
-  background-color: #ffffff;
-  font-family: "Poppins", sans-serif;
+  margin: 0;
   display: flex;
   height: 100vh;
-  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
   overflow: hidden;
 }
 
@@ -19,20 +19,20 @@ body {
   z-index: -1;
 }
 
-/* Panneau gauche */
 .gauche {
-  width: 27vw;
-  height: 100vh;
+  flex: 1;
   position: relative;
 }
 
 .plateau {
   position: absolute;
+  right: 0;
   top: 0;
-  left: 0;
+  width: 27vw;
+  height: 100vh;
+  z-index: 0;
 }
 
-/* Panneau droit */
 .droite {
   flex: 1;
   position: relative;
@@ -41,7 +41,6 @@ body {
   align-items: center;
 }
 
-/* Logo Power4 */
 .logo {
   position: absolute;
   width: 45vw;
@@ -49,23 +48,21 @@ body {
   right: 10vw;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 6px #ddd60b);
+  filter: drop-shadow(0 0 15px #fedb18);
 }
 
-/* Icône du menu (gear) */
 .gear {
   position: absolute;
   top: 20px;
-  right: 25px;
+  right: var(--menu-right);
   width: 45px;
   height: 45px;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
+  z-index: 10;
 }
-
 .gear:hover {
   transform: rotate(180deg) scale(1.2);
   filter: drop-shadow(0 0 6px #38bdf8);
@@ -92,8 +89,8 @@ body {
 
 .menu-deroulant ul {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .menu-deroulant li {
@@ -111,39 +108,14 @@ body {
   bottom: 8px;
   width: 0%;
   height: 2px;
-  background-color: #38bdf8;
+  background: #38bdf8;
   transition: width 0.3s ease;
 }
-
 .menu-deroulant li:hover::after,
 .menu-deroulant li:focus::after {
   width: calc(100% - 40px);
 }
-
 .menu-deroulant li:hover,
 .menu-deroulant li:focus {
   background: #f5f5f5;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .plateau {
-    width: 200px;
-  }
-  .logo {
-    width: 55vw;
-    right: 6vw;
-    top: 6vh;
-  }
-  .gear {
-    width: 40px;
-    height: 40px;
-    top: 14px;
-    right: 16px;
-  }
-  .menu-deroulant {
-    right: 16px;
-    top: 64px;
-    width: 160px;
-  }
 }

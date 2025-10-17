@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Power Menu</title>
-    <link rel="stylesheet" href="../static/css/home.css" />
+    <link rel="stylesheet" href="home.css" />
   </head>
   <body>
     <img
@@ -83,8 +83,8 @@
           </mask>
         </defs>
         <rect
-          width="27vw"
-          height="100vh"
+          width="270"
+          height="1000"
           fill="url(#plateauImage)"
           mask="url(#holes)"
         />
@@ -110,21 +110,21 @@
           <li>À propos</li>
         </ul>
       </div>
-
-      <script>
-        const gear = document.getElementById("gearBtn");
-        const menu = document.querySelector(".menu-deroulant");
-
-        gear.addEventListener("click", (e) => {
-          e.stopPropagation();
-          menu.classList.toggle("active");
-        });
-
-        document.addEventListener("click", (e) => {
-          if (!menu.contains(e.target) && !gear.contains(e.target))
-            menu.classList.remove("active");
-        });
-      </script>
     </div>
+
+    <script>
+      const gear = document.getElementById("gearBtn");
+      const menu = document.querySelector(".menu-deroulant");
+
+      gear.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !gear.contains(e.target))
+          menu.classList.remove("active");
+      });
+    </script>
   </body>
 </html>
