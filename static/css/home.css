@@ -15,11 +15,19 @@ body {
   overflow: hidden;
 }
 
+/* Panneau gauche */
 .gauche {
-  flex: 1;
-  align-items: center;
-  justify-content: center;
+  width: 27vw;
+  height: 100vh;
+  position: relative;
 }
+
+.plateau {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /* Panneau droit */
 .droite {
   flex: 1;
@@ -29,6 +37,7 @@ body {
   align-items: center;
 }
 
+/* Logo Power4 */
 .logo {
   position: absolute;
   width: 45vw;
@@ -39,9 +48,10 @@ body {
 
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 15px #fedb18);
+  filter: drop-shadow(0 0 6px #ffffff);
 }
 
+/* Icône du menu (gear) */
 .gear {
   position: absolute;
   top: 20px;
