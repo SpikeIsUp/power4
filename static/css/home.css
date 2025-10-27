@@ -1,4 +1,4 @@
-:root {
+css :root {
   --menu-right: 30px;
 }
 
@@ -146,4 +146,7 @@ body {
     top: 64px;
     width: 160px;
   }
+}
+.jetons svg image {
+  transition: transform 0.5s ease-in;
 }
