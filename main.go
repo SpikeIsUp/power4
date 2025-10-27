@@ -15,6 +15,10 @@ func main() {
         tmpl := template.Must(template.ParseFiles("template/index.html"))
         tmpl.Execute(w, nil)
     })
+    http.HandleFunc("/play/", func(w http.ResponseWriter,r *http.Request) {
+        tmpl := template.Must(template.ParseFiles("template/puissance4.html"))
+        tmpl.Execute(w, nil)
+    })
 
 		fmt.Println("✅ Serveur lancé sur http://localhost:8080")
     // Lance le serveur
