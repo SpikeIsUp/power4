@@ -1,31 +1,39 @@
-.joueur-1{
-    display: flexbox;
-    justify-content: space-between;
+.joueur-1 {
+  display: flexbox;
+  justify-content: space-between;
 }
 
-.grille{
-    background: rgb(39, 39, 198);
-    border-radius: 20px;
-    display: grid;
-    grid-template-columns: repeat(7, 40px);
-    grid-template-rows: repeat(6, 80px);
+.grille {
+  background: rgb(39, 39, 198);
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  grid-template-rows: repeat(6, 80px);
 }
 
-.trou{
-    background: radial-gradient(circle at 30% 30%, rgb(255, 255, 255), rgb(189, 189, 189));
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    position: relative;
+.trou {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgb(255, 255, 255),
+    rgb(189, 189, 189)
+  );
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  position: relative;
 }
 
 .trou::before {
-    content: '';
-    position: absolute;
-    top: 10%;
-    left: 15%;
-    width: 30%;
-    height: 30%;
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4), transparent);
-    border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+  border-radius: 50%;
 }
