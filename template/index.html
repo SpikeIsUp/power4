@@ -14,10 +14,8 @@
     />
     <div class="gauche">
       <div class="sidebar">
-        <div class="btn">
-          Menu
-        </div>
-        <div class="btn"></div>
+        <div class="btn">Menu</div>
+        <div class="btn">Play</div>
         <div class="btn"></div>
         <div class="btn"></div>
         <div class="btn"></div>
@@ -27,13 +25,47 @@
       </div>
     </div>
 
+    <!-- Partie droite : menu -->
     <div class="droite">
       <img
         class="logo"
         src="../static/image/power4-logo-white.svg"
         alt="logo"
       />
+
       <img class="gear" src="../static/icon/icons8-menu.svg" alt="gear" />
+
+      <div class="menu-deroulant">
+        <ul>
+          <li>Historique</li>
+          <li>Contact</li>
+          <li>À propos</li>
+        </ul>
+      </div>
     </div>
+
+    <script>
+      // Menu déroulant
+      const gear = document.getElementById("gearBtn");
+      const menu = document.querySelector(".menu-deroulant");
+      gear.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("active");
+      });
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !gear.contains(e.target))
+          menu.classList.remove("active");
+      });
+
+      // 7 jetons cliquables
+      for (let i = 1; i <= 7; i++) {
+        const jeton = document.getElementById("jeton" + i);
+        if (jeton) {
+          jeton.addEventListener("click", () =>
+            alert("Jeton " + i + " cliqué !")
+          );
+        }
+      }
+    </script>
   </body>
 </html>

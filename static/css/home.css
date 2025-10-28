@@ -1,7 +1,9 @@
-css :root {
+/* 🎨 Variables */
+:root {
   --menu-right: 30px;
 }
 
+/* 🧍 Structure principale */
 body {
   background-color: #ffffff;
   font-family: "Poppins", sans-serif;
@@ -11,6 +13,7 @@ body {
   overflow: hidden;
 }
 
+/* 🌅 Fond d’écran */
 .background {
   position: absolute;
   width: 100%;
@@ -19,35 +22,59 @@ body {
   z-index: -1;
 }
 
+/* 🎯 Zone gauche : plateau Power4 */
 .gauche {
   width: 27vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10; /* Important : au-dessus de la zone droite */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto; /* autorise les clics */
 }
 
+/* Plateau SVG */
 .plateau {
   width: 100%;
   height: 100%;
+  pointer-events: auto;
 }
 
-/* Panneau droit */
+/* Permet de cliquer sur les jetons */
+.plateau image,
+.jeton {
+  pointer-events: all;
+  cursor: pointer;
+  transition: transform 0.5s ease-in;
+}
+
+/* 🚫 Les trous ne bloquent pas les clics */
+.hole {
+  pointer-events: none;
+}
+
+/* 🎯 Zone droite : logo + menu */
 .droite {
   flex: 1;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5; /* en dessous du plateau */
+  pointer-events: auto;
 }
 
-/* Logo Power4 */
+/* ⚡ Logo Power4 */
 .logo {
   position: absolute;
   width: 45vw;
   top: 10vh;
-  right: 10vw;
+  right: 12vw;
   transition: transform 0.3s ease, filter 0.3s ease;
+  z-index: 6;
 }
 
 .logo:hover {
@@ -55,7 +82,7 @@ body {
   filter: drop-shadow(0 0 6px #bebebe);
 }
 
-/* Icône du menu (gear) */
+/* ⚙️ Icône du menu (gear) */
 .gear {
   position: absolute;
   top: 20px;
@@ -64,6 +91,7 @@ body {
   height: 45px;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
+  z-index: 15; /* au-dessus du logo */
 }
 
 .gear:hover {
@@ -71,10 +99,11 @@ body {
   filter: drop-shadow(0 0 6px #38bdf8);
 }
 
+/* 📜 Menu déroulant */
 .menu-deroulant {
   position: absolute;
-  top: 75px;
-  right: var(--menu-right);
+  top: 8%;
+  right: 6%;
   width: 180px;
   display: none;
   flex-direction: column;
@@ -102,6 +131,7 @@ body {
   cursor: pointer;
   position: relative;
   color: #222;
+  transition: background 0.3s ease;
 }
 
 .menu-deroulant li::after {
@@ -125,28 +155,28 @@ body {
   background: #f5f5f5;
 }
 
-/* Responsive */
+/* 📱 Responsive design */
 @media (max-width: 900px) {
   .plateau {
     width: 200px;
   }
+
   .logo {
     width: 55vw;
     right: 6vw;
     top: 6vh;
   }
+
   .gear {
     width: 40px;
     height: 40px;
     top: 14px;
     right: 16px;
   }
+
   .menu-deroulant {
     right: 16px;
     top: 64px;
     width: 160px;
   }
-}
-.jetons svg image {
-  transition: transform 0.5s ease-in;
 }
