@@ -23,7 +23,7 @@ body {
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
-  background: rgba(255,255,0,0.1);
+  background: transparent;
 }
 .colonne2 {
   position: absolute;
@@ -33,7 +33,7 @@ body {
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
-  background: rgba(255,255,0,0.1);
+  background: transparent;
 }
 .colonne3 {
   position: absolute;
@@ -43,7 +43,7 @@ body {
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
-  background: rgba(255,255,0,0.1);
+  background: transparent;
 }
 .colonne4 {
   position: absolute;
@@ -53,7 +53,7 @@ body {
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
-  background: rgba(255,255,0,0.1);
+  background: transparent;
 }
 .colonne5 {
   position: absolute;
@@ -63,7 +63,7 @@ body {
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
-  background: rgba(255,255,0,0.1);
+  background: transparent;
 }
 .colonne6 {
   position: absolute;
@@ -73,7 +73,7 @@ body {
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
-  background: rgba(255,255,0,0.1);
+  background: transparent;
 }
 .colonne7 {
   position: absolute;
@@ -83,7 +83,7 @@ body {
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
-  background: rgba(255,255,0,0.1);
+  background: transparent;
 }
 
 .menu {
@@ -140,7 +140,7 @@ body {
   background: #f5f5f5;
 }
 
-.menu-deroulant {
+.menu {
     right: 16px;
     top: 64px;
     width: 160px;

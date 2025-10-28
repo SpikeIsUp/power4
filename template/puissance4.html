@@ -9,6 +9,7 @@
 <body>
 
 <div class="menu">
+  <button id="btn-menu">☰ Menu</button>
     <ul>
       <li>Historique</li>
       <li>Contact</li>
@@ -100,6 +101,12 @@
   </div>
   <div class="colonne7" style="left: 85.31%;" onclick="alert('mettre script')">
   </div>
+
+  <script>
+  document.getElementById("btn-menu").addEventListener("click", () => {
+    document.querySelector(".menu").classList.toggle("active");
+  });
+</script>
 
 </div>
 </body>
