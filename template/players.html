@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choix des joueurs</title>
+    <link rel="stylesheet" href="../static/css/players.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Choisissez vos pseudos et jetons</h1>
+
+      <form id="pseudoForm">
+        <!-- Joueur 1 -->
+        <div class="joueur">
+          <h2>Joueur 1</h2>
+          <input
+            type="text"
+            id="pseudo1"
+            placeholder="Pseudo joueur 1"
+            maxlength="20"
+          />
+
+          <div class="jetons">
+            <label>
+              <input type="radio" name="jeton1" value="Jeton1" required />
+              <img src="../static/image/Jetons/Jeton2.png" alt="Jeton1" />
+            </label>
+            <label>
+              <input type="radio" name="jeton1" value="Jeton2" />
+              <img src="../static/image/Jetons/Jeton3.png" alt="Jeton2" />
+            </label>
+            <label>
+              <input type="radio" name="jeton1" value="Jeton3" />
+              <img src="../static/image/Jetons/Jeton4.png" alt="Jeton3" />
+            </label>
+            <label>
+              <input type="radio" name="jeton1" value="Jeton4" />
+              <img src="../static/image/Jetons/Jeton5.png" alt="Jeton4" />
+            </label>
+          </div>
+        </div>
+
+        <!-- Joueur 2 -->
+        <div class="joueur">
+          <h2>Joueur 2</h2>
+          <input
+            type="text"
+            id="pseudo2"
+            placeholder="Pseudo joueur 2"
+            maxlength="20"
+          />
+
+          <div class="jetons">
+            <label>
+              <input type="radio" name="jeton2" value="Jeton1" required />
+              <img src="../static/image/Jetons/Jeton2.png" alt="Jeton1" />
+            </label>
+            <label>
+              <input type="radio" name="jeton2" value="Jeton2" />
+              <img src="../static/image/Jetons/Jeton3.png" alt="Jeton2" />
+            </label>
+            <label>
+              <input type="radio" name="jeton2" value="Jeton3" />
+              <img src="../static/image/Jetons/Jeton4.png" alt="Jeton3" />
+            </label>
+            <label>
+              <input type="radio" name="jeton2" value="Jeton4" />
+              <img src="../static/image/Jetons/Jeton5.png" alt="Jeton4" />
+            </label>
+          </div>
+        </div>
+
+        <div class="play">
+          <button type="submit" id="playBtn">Play</button>
+        </div>
+        
+      </form>
+      <div class="menu">
+          <button type="button" id="menuBtn">Menu</button>
+    </div>
+
+    <script>
+      const form = document.getElementById("pseudoForm");
+
+      // Bouton Menu
+      document.getElementById("menuBtn").addEventListener("click", () => {
+        window.location.href = "menu.html";
+      });
+
+      // Bouton Play
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let pseudo1 = document.getElementById("pseudo1").value.trim();
+        let pseudo2 = document.getElementById("pseudo2").value.trim();
+
+        if (!pseudo1) pseudo1 = "Joueur 1";
+        if (!pseudo2) pseudo2 = "Joueur 2";
+
+        const jeton1 = document.querySelector(
+          'input[name="jeton1"]:checked'
+        ).value;
+        const jeton2 = document.querySelector(
+          'input[name="jeton2"]:checked'
+        ).value;
+
+        if (pseudo1 === pseudo2 && jeton1 === jeton2) {
+          alert(
+            "Les joueurs ne peuvent pas avoir le même pseudo et le même jeton !"
+          );
+          return;
+        }
+
+        localStorage.setItem("pseudo1", pseudo1);
+        localStorage.setItem("pseudo2", pseudo2);
+        localStorage.setItem("jeton1", jeton1);
+        localStorage.setItem("jeton2", jeton2);
+
+        window.location.href = "Puissance4.html";
+      });
+    </script>
+  </body>
+</html>

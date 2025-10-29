@@ -1,0 +1,3 @@
+{{range .Historique}}
+    <div class="line">✅ {{.Joueur}} a gagné — {{.Date}}</div>
+{{end}}

@@ -30,6 +30,7 @@
               preserveAspectRatio="xMidYMid slice"
             />
           </pattern>
+
           <mask id="holes">
             <rect width="100%" height="100%" fill="white" />
             <circle class="hole" cx="25%" cy="12.5%" r="10%" fill="black" />
@@ -43,87 +44,75 @@
           </mask>
         </defs>
 
-        <!-- Plateau -->
         <rect
           width="100%"
           height="100%"
           fill="url(#plateauImage)"
           mask="url(#holes)"
         />
-
         <image
+          class="jeton"
           id="jeton1"
-          href="../static/image/Jetons/Jeton2.png"
-          x="8.4%"
-          y="-3.9%"
-          width="33.3%"
-          height="33.3%"
+          href="../static/image/Jetons/menu.png"
+          x="9.2%"
+          y="-3.2%"
           style="cursor: pointer"
         />
         <image
+          class="jeton"
           id="jeton2"
-          href="../static/image/Jetons/Jeton2.png"
-          x="8.4%"
-          y="71%"
-          width="33.3%"
-          height="33.3%"
+          href="../static/image/Jetons/bot.png"
+          x="9.2%"
+          y="71.5%"
           style="cursor: pointer"
         />
         <image
+          class="jeton"
           id="jeton3"
-          href="../static/image/Jetons/Jeton3.png"
-          x="58.5%"
-          y="21.23%"
-          width="33%"
-          height="33%"
+          href="../static/image/Jetons/play.png"
+          x="59%"
+          y="21.7%"
           style="cursor: pointer"
           onclick="window.location.href='/play'"
         />
         <image
+          class="jeton"
           id="jeton4"
-          href="../static/image/Jetons/Jeton4.png"
-          x="8.6%"
-          y="21.23%"
-          width="33.2%"
-          height="33.2%"
+          href="../static/image/Jetons/saves.png"
+          x="9.2%"
+          y="21.7%"
           style="cursor: pointer"
         />
         <image
+          class="jeton"
           id="jeton5"
-          href="../static/image/Jetons/Jeton5.png"
-          x="8.6%"
-          y="46.2%"
-          width="33%"
-          height="33%"
+          href="../static/image/Jetons/mod.png"
+          x="9.2%"
+          y="46.6%"
           style="cursor: pointer"
         />
         <image
+          class="jeton"
           id="jeton6"
-          href="../static/image/Jetons/Jeton2.png"
-          x="58.4%"
-          y="46%"
-          width="33.3%"
-          height="33.3%"
+          href="../static/image/Jetons/player.png"
+          x="59%"
+          y="46.6%"
           style="cursor: pointer"
         />
         <image
+          class="jeton"
           id="jeton7"
-          href="../static/image/Jetons/Jeton2.png"
-          x="58.4%"
-          y="71%"
-          width="33.3%"
-          height="33.3%"
+          href="../static/image/Jetons/special.png"
+          x="59.3%"
+          y="71.7%"
           style="cursor: pointer"
         />
       </svg>
     </div>
+
     <!-- Partie droite : menu -->
     <div class="droite">
-      <img
-        class="logo"
-        src="../static/image/power4-logo-white.svg"
-        alt="logo"
-      />
+      <img class="logo" src="../static/image/logo.png" alt="logo" />
       <img
         class="gear"
         id="gearBtn"
@@ -144,24 +133,43 @@
       // Menu déroulant
       const gear = document.getElementById("gearBtn");
       const menu = document.querySelector(".menu-deroulant");
+
       gear.addEventListener("click", (e) => {
         e.stopPropagation();
         menu.classList.toggle("active");
       });
+
       document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !gear.contains(e.target))
+        if (!menu.contains(e.target) && !gear.contains(e.target)) {
           menu.classList.remove("active");
+        }
       });
 
-      // 7 jetons cliquables
-      for (let i = 1; i <= 7; i++) {
-        const jeton = document.getElementById("jeton" + i);
-        if (jeton) {
-          jeton.addEventListener("click", () =>
-            alert("Jeton " + i + " cliqué !")
-          );
-        }
-      }
+      document.getElementById("jeton1").addEventListener("click", () => {
+        location.reload();
+      });
+      document
+        .getElementById("jeton2")
+        .addEventListener("click", () => alert("Mode bot bientôt dispo"));
+      document.getElementById("jeton3").addEventListener("click", () => {
+        window.location.href = "puissance4.html"; // Redirection
+      });
+
+      document.getElementById("jeton4").addEventListener("click", () => {
+        window.location.href = "histo.html"; // Redirection
+      });
+
+      document
+        .getElementById("jeton5")
+        .addEventListener("click", () => alert("Mods bientôt dispo"));
+
+      document.getElementById("jeton6").addEventListener("click", () => {
+        window.location.href = "players.html"; // Redirection
+      });
+
+      document
+        .getElementById("jeton7")
+        .addEventListener("click", () => alert("Surprise bientôt dispo"));
     </script>
   </body>
 </html>

@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: url("../image/fond_vert_player.jpg") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+.history-box {
+  max-height: 300px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.line {
+  padding: 8px;
+  margin: 5px 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+.clear-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.clear-btn:hover {
+  background: red;
+}
+
+.back-link {
+  display: block;
+  margin-top: 10px;
+  color: #ffd700;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
