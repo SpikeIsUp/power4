@@ -1,78 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Préparer la partie</title>
-  <link rel="stylesheet" href="/static/css/players.css" />
-</head>
-<body>
-  <button type="button" id="menuBtn">Menu</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Préparer la partie</title>
+    <link rel="stylesheet" href="/static/css/players.css" />
+  </head>
+  <body>
+    <button type="button" id="menuBtn">Menu</button>
 
-  <div class="container">
-    <h1>Choisissez vos pseudos et jetons</h1>
+    <div class="container">
+      <h1>Choisissez vos pseudos et jetons</h1>
 
-    <form id="pseudoForm">
-      <div class="joueur">
-        <h2>Joueur 1</h2>
-        <input type="text" id="pseudo1" placeholder="Pseudo joueur 1" maxlength="20" />
-        <div class="jetons">
-          <label><input type="radio" name="jeton1" value="/static/image/Jetons/Jeton2.png" required /><img src="/static/image/Jetons/Jeton2.png" alt="Jeton2" /></label>
-          <label><input type="radio" name="jeton1" value="/static/image/Jetons/Jeton3.png" /><img src="/static/image/Jetons/Jeton3.png" alt="Jeton3" /></label>
-          <label><input type="radio" name="jeton1" value="/static/image/Jetons/Jeton4.png" /><img src="/static/image/Jetons/Jeton4.png" alt="Jeton4" /></label>
-          <label><input type="radio" name="jeton1" value="/static/image/Jetons/Jeton5.png" /><img src="/static/image/Jetons/Jeton5.png" alt="Jeton5" /></label>
+      <form id="pseudoForm">
+        <div class="joueur">
+          <h2>Joueur 1</h2>
+          <input
+            type="text"
+            id="pseudo1"
+            placeholder="Pseudo joueur 1"
+            maxlength="20"
+          />
+          <div class="jetons">
+            <label
+              ><input
+                type="radio"
+                name="jeton1"
+                value="/static/image/Jetons/Jeton2.png"
+                required /><img
+                src="/static/image/Jetons/Jeton2.png"
+                alt="Jeton2"
+            /></label>
+            <label
+              ><input
+                type="radio"
+                name="jeton1"
+                value="/static/image/Jetons/Jeton3.png" /><img
+                src="/static/image/Jetons/Jeton3.png"
+                alt="Jeton3"
+            /></label>
+            <label
+              ><input
+                type="radio"
+                name="jeton1"
+                value="/static/image/Jetons/Jeton4.png" /><img
+                src="/static/image/Jetons/Jeton4.png"
+                alt="Jeton4"
+            /></label>
+            <label
+              ><input
+                type="radio"
+                name="jeton1"
+                value="/static/image/Jetons/Jeton5.png" /><img
+                src="/static/image/Jetons/Jeton5.png"
+                alt="Jeton5"
+            /></label>
+          </div>
         </div>
-      </div>
 
-      <div class="joueur">
-        <h2>Joueur 2</h2>
-        <input type="text" id="pseudo2" placeholder="Pseudo joueur 2" maxlength="20" />
-        <div class="jetons">
-          <label><input type="radio" name="jeton2" value="/static/image/Jetons/Jeton2.png" required /><img src="/static/image/Jetons/Jeton2.png" alt="Jeton2" /></label>
-          <label><input type="radio" name="jeton2" value="/static/image/Jetons/Jeton3.png" /><img src="/static/image/Jetons/Jeton3.png" alt="Jeton3" /></label>
-          <label><input type="radio" name="jeton2" value="/static/image/Jetons/Jeton4.png" /><img src="/static/image/Jetons/Jeton4.png" alt="Jeton4" /></label>
-          <label><input type="radio" name="jeton2" value="/static/image/Jetons/Jeton5.png" /><img src="/static/image/Jetons/Jeton5.png" alt="Jeton5" /></label>
+        <div class="joueur">
+          <h2>Joueur 2</h2>
+          <input
+            type="text"
+            id="pseudo2"
+            placeholder="Pseudo joueur 2"
+            maxlength="20"
+          />
+          <div class="jetons">
+            <label
+              ><input
+                type="radio"
+                name="jeton2"
+                value="/static/image/Jetons/Jeton2.png"
+                required /><img
+                src="/static/image/Jetons/Jeton2.png"
+                alt="Jeton2"
+            /></label>
+            <label
+              ><input
+                type="radio"
+                name="jeton2"
+                value="/static/image/Jetons/Jeton3.png" /><img
+                src="/static/image/Jetons/Jeton3.png"
+                alt="Jeton3"
+            /></label>
+            <label
+              ><input
+                type="radio"
+                name="jeton2"
+                value="/static/image/Jetons/Jeton4.png" /><img
+                src="/static/image/Jetons/Jeton4.png"
+                alt="Jeton4"
+            /></label>
+            <label
+              ><input
+                type="radio"
+                name="jeton2"
+                value="/static/image/Jetons/Jeton5.png" /><img
+                src="/static/image/Jetons/Jeton5.png"
+                alt="Jeton5"
+            /></label>
+          </div>
         </div>
-      </div>
 
-      <div class="play">
-        <button type="submit" id="playBtn">Jouer</button>
-      </div>
-    </form>
-  </div>
+        <div class="play">
+          <button type="submit" id="playBtn">Jouer</button>
+        </div>
+      </form>
+    </div>
 
-  <script>
-    document.getElementById("menuBtn").addEventListener("click", () => {
-      window.location.href = "/";
-    });
-
-    function updateLocking() {
-      const j1 = document.querySelector('input[name="jeton1"]:checked')?.value;
-      const j2 = document.querySelector('input[name="jeton2"]:checked')?.value;
-      document.querySelectorAll('input[name="jeton2"]').forEach(r => r.disabled = (j1 && r.value === j1));
-      document.querySelectorAll('input[name="jeton1"]').forEach(r => r.disabled = (j2 && r.value === j2));
-    }
-    document.querySelectorAll('input[name="jeton1"], input[name="jeton2"]').forEach(r => r.addEventListener("change", updateLocking));
-
-    document.getElementById("pseudoForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      let p1 = document.getElementById("pseudo1").value.trim() || "Joueur 1";
-      let p2 = document.getElementById("pseudo2").value.trim() || "Joueur 2";
-      const t1 = document.querySelector('input[name="jeton1"]:checked')?.value;
-      const t2 = document.querySelector('input[name="jeton2"]:checked')?.value;
-      if (!t1 || !t2) { alert("Choisissez un jeton pour chaque joueur."); return; }
-      if (t1 === t2) { alert("Les deux joueurs ne peuvent pas avoir le même jeton."); return; }
-
-      const res = await fetch("/api/setupPlayers", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({ p1, p2, token1: t1, token2: t2 }),
+    <script>
+      document.getElementById("menuBtn").addEventListener("click", () => {
+        window.location.href = "/";
       });
-      const data = await res.json();
-      if (data.error) { alert(data.error); return; }
 
-      window.location.href = "/play";
-    });
-  </script>
-</body>
+      function updateLocking() {
+        const j1 = document.querySelector(
+          'input[name="jeton1"]:checked'
+        )?.value;
+        const j2 = document.querySelector(
+          'input[name="jeton2"]:checked'
+        )?.value;
+        document
+          .querySelectorAll('input[name="jeton2"]')
+          .forEach((r) => (r.disabled = j1 && r.value === j1));
+        document
+          .querySelectorAll('input[name="jeton1"]')
+          .forEach((r) => (r.disabled = j2 && r.value === j2));
+      }
+      document
+        .querySelectorAll('input[name="jeton1"], input[name="jeton2"]')
+        .forEach((r) => r.addEventListener("change", updateLocking));
+
+      document
+        .getElementById("pseudoForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          let p1 =
+            document.getElementById("pseudo1").value.trim() || "Joueur 1";
+          let p2 =
+            document.getElementById("pseudo2").value.trim() || "Joueur 2";
+          const t1 = document.querySelector(
+            'input[name="jeton1"]:checked'
+          )?.value;
+          const t2 = document.querySelector(
+            'input[name="jeton2"]:checked'
+          )?.value;
+          if (!t1 || !t2) {
+            alert("Choisissez un jeton pour chaque joueur.");
+            return;
+          }
+          if (t1 === t2) {
+            alert("Les deux joueurs ne peuvent pas avoir le même jeton.");
+            return;
+          }
+
+          const res = await fetch("/api/setupPlayers", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ p1, p2, token1: t1, token2: t2 }),
+          });
+          const data = await res.json();
+          if (data.error) {
+            alert(data.error);
+            return;
+          }
+
+          window.location.href = "/play";
+        });
+    </script>
+  </body>
 </html>

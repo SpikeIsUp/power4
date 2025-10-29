@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Historique des Parties - Puissance 4</title>
-  <link rel="stylesheet" href="/static/css/histo.css" />
-</head>
-<body>
-  <div class="overlay">
-    <h1>Historique des Parties</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Historique des Parties - Puissance 4</title>
+    <link rel="stylesheet" href="/static/css/histo.css" />
+  </head>
+  <body>
+    <div class="overlay">
+      <h1>Historique des Parties</h1>
 
-    <div class="history-box">
-      {{ if .Items }}
-        {{ range .Items }}
-          <div class="line">{{ .ResultLine }}</div>
-        {{ end }}
-      {{ else }}
+      <div class="history-box">
+        {{ if .Items }} {{ range .Items }}
+        <div class="line">{{ .ResultLine }}</div>
+        {{ end }} {{ else }}
         <div class="line empty">Aucune partie enregistrée pour le moment.</div>
-      {{ end }}
+        {{ end }}
+      </div>
+
+      <form action="/clear-history" method="post">
+        <button type="submit" class="clear-btn">Effacer l'historique</button>
+      </form>
+
+      <a href="/" class="back-link">⬅ Retour au menu</a>
     </div>
-
-    <form action="/clear-history" method="post">
-      <button type="submit" class="clear-btn">Effacer l'historique</button>
-    </form>
-
-    <a href="/" class="back-link">⬅ Retour au menu</a>
-  </div>
-</body>
+  </body>
 </html>
