@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/puissance4.css" />
+    <link rel="stylesheet" href="../static/css/bot.css" />
     <title>Puissance 4 - IA & Difficulté</title>
   </head>
   <body>
@@ -116,6 +116,15 @@
           rx="80"
           ry="80"
         />
+        <rect
+          width="675"
+          height="575"
+          fill="url(#plateauImage)"
+          mask="url(#trous)"
+          rx="80"
+          ry="80"
+          style="z-index: 30; pointer-events: none"
+        />
       </svg>
 
       <!-- Colonnes cliquables -->
@@ -148,5 +157,6 @@
         }
       });
     </script>
+    <a href="../template/menu.html" class="back-menu">⬅ Retour au menu</a>
   </body>
 </html>
