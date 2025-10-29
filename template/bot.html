@@ -1,38 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Puissance 4 — Jouer contre l'IA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../static/css/ia.css" />
+    <title>Puissance 4 – IA vs Joueur</title>
   </head>
   <body>
-    <main class="container">
-      <h1>Puissance 4 — Joue contre l'IA</h1>
+    <!-- Bouton menu -->
+    <img
+      class="gear"
+      id="gear"
+      src="../static/icon/icons8-menu.svg"
+      alt="gear"
+    />
 
-      <div class="controls">
-        <label for="difficulty">Difficulté :</label>
-        <select id="difficulty">
-          <option value="2">Facile</option>
-          <option value="4" selected>Moyen</option>
-          <option value="6">Difficile</option>
-        </select>
-        <button id="restart">Recommencer</button>
-        <div id="status" class="status">À toi de jouer (Jaune)</div>
-      </div>
+    <!-- Menu déroulant -->
+    <div class="menu">
+      <ul>
+        <li id="restart">Rejouer</li>
+        <li id="toggle-ai">Activer/Désactiver IA</li>
+        <li>Historique</li>
+        <li>Contact</li>
+        <li>À propos</li>
+        <li>Quitter</li>
+      </ul>
+    </div>
 
-      <div id="board" class="board" aria-label="Plateau Puissance 4"></div>
+    <!-- Plateau du Puissance 4 -->
+    <div class="puissance4">
+      <svg
+        viewBox="0 0 675 575"
+        preserveAspectRatio="xMidYMid meet"
+        class="plateau"
+      >
+        <defs>
+          <pattern
+            id="plateauImage"
+            patternUnits="userSpaceOnUse"
+            width="675"
+            height="575"
+          >
+            <image
+              href="../static/image/fond_bleu_home.png"
+              width="800"
+              height="575"
+            />
+          </pattern>
 
-      <aside class="legend">
-        <div class="cell legend-cell player1">Joueur (Jaune)</div>
-        <div class="cell legend-cell player2">IA (Rouge)</div>
-      </aside>
+          <mask id="trous">
+            <rect width="675" height="575" fill="white" rx="80" ry="80" />
+            <g fill="black">
+              <!-- Trous automatiques -->
+              <script>
+                for (let x = 65, i = 0; x <= 610; x += 91, i++) { for (let y =
+                80; y <= 495; y += 83) { document.write(`<circle cx="${x}"
+                cy="${y}" r="34"/>`); } }
+              </script>
+            </g>
+          </mask>
+        </defs>
+        <rect
+          width="675"
+          height="575"
+          fill="url(#plateauImage)"
+          mask="url(#trous)"
+          rx="80"
+          ry="80"
+        />
+      </svg>
 
-      <p class="note">
-        Clique sur une colonne pour jouer. L'IA joue automatiquement après toi.
-      </p>
-    </main>
+      <!-- Zones cliquables pour chaque colonne -->
+      <div class="colonne" data-col="0" style="left: 4.55%"></div>
+      <div class="colonne" data-col="1" style="left: 18.06%"></div>
+      <div class="colonne" data-col="2" style="left: 31.5%"></div>
+      <div class="colonne" data-col="3" style="left: 44.98%"></div>
+      <div class="colonne" data-col="4" style="left: 58.48%"></div>
+      <div class="colonne" data-col="5" style="left: 71.95%"></div>
+      <div class="colonne" data-col="6" style="left: 85.31%"></div>
+    </div>
 
     <script src="../static/js/ia.js"></script>
+    <script>
+      // Gestion du menu
+      const gear = document.getElementById("gear");
+      const menu = document.querySelector(".menu");
+
+      gear.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !gear.contains(e.target)) {
+          menu.classList.remove("active");
+        }
+      });
+    </script>
   </body>
 </html>
