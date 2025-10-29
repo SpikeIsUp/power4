@@ -1,15 +1,15 @@
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-     justify-content: flex-start;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url(/static/image/fond_rouge_power4.png);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(/static/image/fond_rouge_power4.png);
 }
 .puissance4 {
   position: relative;
-  width: 90vw;  
+  width: 90vw;
   max-width: 900px;
   height: auto;
   aspect-ratio: 675 / 575;
@@ -17,9 +17,9 @@ body {
 }
 .colonne1 {
   position: absolute;
-  top: 6.6%; 
-  height: 86.5%; 
-  width: 10.1%; 
+  top: 6.6%;
+  height: 86.5%;
+  width: 10.1%;
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
@@ -27,9 +27,9 @@ body {
 }
 .colonne2 {
   position: absolute;
-  top: 6.6%; 
-  height: 86.5%; 
-  width: 10.1%; 
+  top: 6.6%;
+  height: 86.5%;
+  width: 10.1%;
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
@@ -37,9 +37,9 @@ body {
 }
 .colonne3 {
   position: absolute;
-  top: 6.6%; 
-  height: 86.5%; 
-  width: 10.1%; 
+  top: 6.6%;
+  height: 86.5%;
+  width: 10.1%;
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
@@ -47,9 +47,9 @@ body {
 }
 .colonne4 {
   position: absolute;
-  top: 6.6%; 
-  height: 86.5%; 
-  width: 10.1%; 
+  top: 6.6%;
+  height: 86.5%;
+  width: 10.1%;
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
@@ -57,9 +57,9 @@ body {
 }
 .colonne5 {
   position: absolute;
-  top: 6.6%; 
-  height: 86.5%; 
-  width: 10.1%; 
+  top: 6.6%;
+  height: 86.5%;
+  width: 10.1%;
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
@@ -67,9 +67,9 @@ body {
 }
 .colonne6 {
   position: absolute;
-  top: 6.6%; 
-  height: 86.5%; 
-  width: 10.1%; 
+  top: 6.6%;
+  height: 86.5%;
+  width: 10.1%;
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;
@@ -77,9 +77,9 @@ body {
 }
 .colonne7 {
   position: absolute;
-  top: 6.6%; 
-  height: 86.5%; 
-  width: 10.1%; 
+  top: 6.6%;
+  height: 86.5%;
+  width: 10.1%;
   border-radius: 3rem;
   background: transparent;
   cursor: pointer;

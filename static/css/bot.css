@@ -1,80 +1,99 @@
+/* ===== BASE ===== */
 body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-image: url("../static/image/fond_rouge_power4.png");
+  height: 100vh;
+  background-image: url("../image/fond_rouge_power4.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   font-family: sans-serif;
+  overflow: hidden;
 }
 
+/* ===== CONTENEUR ===== */
 .puissance4 {
   position: relative;
-  width: 90%;
-  max-width: 900px;
+  width: 85vw;
+  max-width: 800px;
   aspect-ratio: 675 / 575;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
 }
 
-/* Plateau SVG */
+/* ===== PLATEAU SVG ===== */
 .plateau {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Colonnes cliquables */
+/* ===== COLONNES CLIQUABLES ===== */
 .colonne {
   position: absolute;
-  top: 6.6%;
-  height: 86.5%;
-  width: 10.1%;
+  top: 6%;
+  height: 87%;
+  width: 13.5%;
   cursor: pointer;
   background: transparent;
-  border-radius: 3rem;
   transition: background 0.2s ease;
+  z-index: 10;
 }
 .colonne:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
 }
 
-/* Jetons */
+/* ===== JETONS ===== */
 .token {
   position: absolute;
   border-radius: 50%;
-  width: 10.07%; /* correspond à largeur d'une colonne */
-  aspect-ratio: 1/1;
+  width: 9.5%; /* Taille adaptée au trou du plateau */
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
   transition: top 0.3s ease;
-  z-index: 10;
+  z-index: 5;
 }
-
-.token.red {
-  background-color: #ff3b3b;
-  box-shadow: 0 0 10px #ff3b3b88;
+/* ===== JETONS AVEC IMAGES ===== */
+.token.black {
+  background-color: transparent; /* Supprime la couleur */
+  background-image: url("../image/Jetons/Jeton2.png"); /* Chemin vers ton image rouge */
+  background-size: cover; /* L'image couvre tout le cercle */
+  background-position: center;
+  box-shadow: 0 0 8px #00000099; /* Optionnel, tu peux garder l'effet lumineux */
 }
 
 .token.yellow {
-  background-color: #f9d73a;
-  box-shadow: 0 0 10px #f9d73a88;
+  background-color: transparent; /* Supprime la couleur */
+  background-image: url("../image/Jetons/Jeton3.png"); /* Chemin vers ton image jaune */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 8px #f9d73a99;
 }
 
-/* Menu et gear */
+/* ===== GEAR ===== */
 .gear {
   position: absolute;
-  top: 3%;
-  right: 3%;
+  top: 2%;
+  right: 2%;
   width: 6%;
   max-width: 45px;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
-  z-index: 15;
+  z-index: 50;
 }
 .gear:hover {
-  transform: rotate(180deg) scale(1.2);
+  transform: rotate(180deg) scale(1.1);
   filter: drop-shadow(0 0 6px #030268);
 }
 
+/* ===== MENU ===== */
 .menu {
   position: absolute;
   top: 8%;
@@ -89,7 +108,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   padding: 8px 0;
-  z-index: 20;
+  z-index: 60;
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
 }
@@ -98,39 +117,46 @@ body {
   transform: translateY(0);
   pointer-events: auto;
 }
-
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 .menu li {
   padding: 3% 5%;
   font-size: 1.2vw;
   cursor: pointer;
-  position: relative;
   color: #222;
   transition: background 0.3s ease;
 }
-
 .menu li:hover,
 .menu li:focus {
   background: #f5f5f5;
 }
 
+/* ===== INDICATEUR ===== */
 #turn-indicator {
   position: absolute;
-  top: 2%;
+  top: 1%;
   left: 50%;
   transform: translateX(-50%);
   font-weight: bold;
   color: #fff;
   font-size: 1.5vw;
   text-shadow: 0 0 5px #000;
+  z-index: 70;
+}
+.token {
+  position: absolute;
+  width: 11%;
+  transform: translateX(-63%) translateY(8%);
+  border-radius: 50%;
+  transition: top 2000ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 20;
+  pointer-events: none;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .gear {
     width: 8%;
