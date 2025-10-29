@@ -144,9 +144,10 @@
       document.getElementById("jeton1").addEventListener("click", () => {
         location.reload();
       });
-      document
-        .getElementById("jeton2")
-        .addEventListener("click", () => alert("Mode bot bientôt dispo"));
+      document.getElementById("jeton2").addEventListener("click", () => {
+        window.location.href = "bot.html"; // Redirection
+      });
+
       document.getElementById("jeton3").addEventListener("click", () => {
         window.location.href = "puissance4.html";
       });
