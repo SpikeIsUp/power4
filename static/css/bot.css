@@ -2,30 +2,26 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-image: url("../static/image/fond_rouge_power4.png");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
+  font-family: sans-serif;
 }
 
-/* Plateau principal */
 .puissance4 {
   position: relative;
-  width: 90vw;
+  width: 90%;
   max-width: 900px;
   aspect-ratio: 675 / 575;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
+/* Plateau SVG */
 .plateau {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /* Colonnes cliquables */
@@ -34,21 +30,20 @@ body {
   top: 6.6%;
   height: 86.5%;
   width: 10.1%;
-  border-radius: 3rem;
   cursor: pointer;
   background: transparent;
+  border-radius: 3rem;
   transition: background 0.2s ease;
 }
-
 .colonne:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Jetons placés */
+/* Jetons */
 .token {
   position: absolute;
   border-radius: 50%;
-  width: 10%;
+  width: 10.07%; /* correspond à largeur d'une colonne */
   aspect-ratio: 1/1;
   transition: top 0.3s ease;
   z-index: 10;
@@ -64,18 +59,17 @@ body {
   box-shadow: 0 0 10px #f9d73a88;
 }
 
-/* Menu & gear */
+/* Menu et gear */
 .gear {
   position: absolute;
-  top: 20px;
-  right: 25px;
-  width: 45px;
-  height: 45px;
+  top: 3%;
+  right: 3%;
+  width: 6%;
+  max-width: 45px;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
   z-index: 15;
 }
-
 .gear:hover {
   transform: rotate(180deg) scale(1.2);
   filter: drop-shadow(0 0 6px #030268);
@@ -85,7 +79,8 @@ body {
   position: absolute;
   top: 8%;
   right: 6%;
-  width: 180px;
+  width: 25%;
+  max-width: 180px;
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
@@ -98,7 +93,6 @@ body {
   backdrop-filter: blur(6px);
   transition: all 0.3s ease;
 }
-
 .menu.active {
   opacity: 1;
   transform: translateY(0);
@@ -112,28 +106,12 @@ body {
 }
 
 .menu li {
-  padding: 12px 20px;
-  font-size: 15px;
+  padding: 3% 5%;
+  font-size: 1.2vw;
   cursor: pointer;
   position: relative;
   color: #222;
   transition: background 0.3s ease;
-}
-
-.menu li::after {
-  content: "";
-  position: absolute;
-  left: 20px;
-  bottom: 8px;
-  width: 0%;
-  height: 2px;
-  background-color: #0a1978;
-  transition: width 0.3s ease;
-}
-
-.menu li:hover::after,
-.menu li:focus::after {
-  width: calc(100% - 40px);
 }
 
 .menu li:hover,
@@ -141,18 +119,33 @@ body {
   background: #f5f5f5;
 }
 
+#turn-indicator {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.5vw;
+  text-shadow: 0 0 5px #000;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .gear {
-    width: 40px;
-    height: 40px;
-    top: 14px;
-    right: 16px;
+    width: 8%;
+    top: 2%;
+    right: 2%;
   }
-
   .menu {
-    right: 16px;
-    top: 64px;
-    width: 160px;
+    width: 30%;
+    right: 3%;
+    top: 8%;
+  }
+  .menu li {
+    font-size: 2.5vw;
+  }
+  #turn-indicator {
+    font-size: 3vw;
   }
 }
