@@ -1,121 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Choix des joueurs</title>
-    <link rel="stylesheet" href="../static/css/players.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Choisissez vos pseudos et jetons</h1>
-
-      <form id="pseudoForm">
-
-        <div class="joueur">
-          <h2>Joueur 1</h2>
-          <input
-            type="text"
-            id="pseudo1"
-            placeholder="Pseudo joueur 1"
-            maxlength="20"
-          />
-
-          <div class="jetons">
-            <label>
-              <input type="radio" name="jeton1" value="Jeton1" required />
-              <img src="../static/image/Jetons/Jeton2.png" alt="Jeton1" />
-            </label>
-            <label>
-              <input type="radio" name="jeton1" value="Jeton2" />
-              <img src="../static/image/Jetons/Jeton3.png" alt="Jeton2" />
-            </label>
-            <label>
-              <input type="radio" name="jeton1" value="Jeton3" />
-              <img src="../static/image/Jetons/Jeton4.png" alt="Jeton3" />
-            </label>
-            <label>
-              <input type="radio" name="jeton1" value="Jeton4" />
-              <img src="../static/image/Jetons/Jeton5.png" alt="Jeton4" />
-            </label>
-          </div>
-        </div>
-
-        <div class="joueur">
-          <h2>Joueur 2</h2>
-          <input
-            type="text"
-            id="pseudo2"
-            placeholder="Pseudo joueur 2"
-            maxlength="20"
-          />
-
-          <div class="jetons">
-            <label>
-              <input type="radio" name="jeton2" value="Jeton1" required />
-              <img src="../static/image/Jetons/Jeton2.png" alt="Jeton1" />
-            </label>
-            <label>
-              <input type="radio" name="jeton2" value="Jeton2" />
-              <img src="../static/image/Jetons/Jeton3.png" alt="Jeton2" />
-            </label>
-            <label>
-              <input type="radio" name="jeton2" value="Jeton3" />
-              <img src="../static/image/Jetons/Jeton4.png" alt="Jeton3" />
-            </label>
-            <label>
-              <input type="radio" name="jeton2" value="Jeton4" />
-              <img src="../static/image/Jetons/Jeton5.png" alt="Jeton4" />
-            </label>
-          </div>
-        </div>
-
-        <div class="play">
-          <button type="submit" id="playBtn">Play</button>
-        </div>
-        
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classement des joueurs</title>
+  <link rel="stylesheet" href="/static/css/players.css" />
+  <style>
+    /* styles minimes si ton players.css est vide/différent */
+    body { margin:0; font-family: Arial, sans-serif; background: url("/static/image/fond_bleuciel_player.jpg") no-repeat center/cover; }
+    .container { max-width: 720px; margin: 70px auto; background: rgba(255,255,255,.95); border-radius: 12px; padding: 18px 20px; box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+    h1 { margin: 8px 0 16px; text-align: center; }
+    .actions { display:flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+    .btn { appearance: none; border: none; border-radius: 10px; padding: 10px 14px; font-weight: 800; cursor: pointer; }
+    .btn-menu { background:#394b5f; color:#fff; }
+    .btn-clear { background:#c62828; color:#fff; }
+    .btn:hover { filter: brightness(1.05); }
+    table { width: 100%; border-collapse: collapse; background:#fff; border-radius: 10px; overflow: hidden; }
+    th, td { padding: 12px 10px; border-bottom: 1px solid #eee; text-align: left; }
+    th { background:#f6f7fb; font-size: 14px; text-transform: uppercase; letter-spacing: .5px; }
+    tr:nth-child(odd) td { background:#fafbff; }
+    .rank { width: 64px; font-weight: 900; text-align: center; }
+    .name { font-weight: 700; }
+    .wins { width: 120px; font-weight: 900; text-align: right; }
+    .empty { text-align: center; padding: 24px; color:#666; font-style: italic; }
+    .medal { margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="actions">
+      <button class="btn btn-menu" onclick="location.href='/'">⬅ Retour menu</button>
+      <form action="/clear-scores" method="post">
+        <button class="btn btn-clear" type="submit">Effacer le classement</button>
       </form>
-      <div class="menu">
-          <button type="button" id="menuBtn">Menu</button>
     </div>
 
-    <script>
-      const form = document.getElementById("pseudoForm");
+    <h1>🏆 Top Joueurs — Victoires</h1>
 
-      document.getElementById("menuBtn").addEventListener("click", () => {
-        window.location.href = "menu.html";
-      });
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        let pseudo1 = document.getElementById("pseudo1").value.trim();
-        let pseudo2 = document.getElementById("pseudo2").value.trim();
-
-        if (!pseudo1) pseudo1 = "Joueur 1";
-        if (!pseudo2) pseudo2 = "Joueur 2";
-
-        const jeton1 = document.querySelector(
-          'input[name="jeton1"]:checked'
-        ).value;
-        const jeton2 = document.querySelector(
-          'input[name="jeton2"]:checked'
-        ).value;
-
-        if (pseudo1 === pseudo2 && jeton1 === jeton2) {
-          alert(
-            "Les joueurs ne peuvent pas avoir le même pseudo et le même jeton !"
-          );
-          return;
-        }
-
-        localStorage.setItem("pseudo1", pseudo1);
-        localStorage.setItem("pseudo2", pseudo2);
-        localStorage.setItem("jeton1", jeton1);
-        localStorage.setItem("jeton2", jeton2);
-
-        window.location.href = "Puissance4.html";
-      });
-    </script>
-  </body>
+    {{ if .Entries }}
+      <table>
+        <thead>
+          <tr>
+            <th class="rank">#</th>
+            <th>Joueur</th>
+            <th class="wins">Victoires</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range $i, $e := .Entries }}
+            <tr>
+              <td class="rank">
+                {{ if eq $i 0 }}<span class="medal">🥇</span>{{ else if eq $i 1 }}<span class="medal">🥈</span>{{ else if eq $i 2 }}<span class="medal">🥉</span>{{ end }}
+                {{ add1 $i }}
+              </td>
+              <td class="name">{{ $e.Name }}</td>
+              <td class="wins">{{ $e.Wins }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    {{ else }}
+      <div class="empty">Aucune victoire enregistrée pour le moment.</div>
+    {{ end }}
+  </div>
+</body>
 </html>

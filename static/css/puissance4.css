@@ -186,3 +186,90 @@ body {
     width: 160px;
   }
 }
+
+/* Jetons rendus par JS */
+.token {
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.35));
+}
+
+/* Overlay victoire (arcade rouge/noir) */
+.victory-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 0, 10, 0.6);
+  backdrop-filter: blur(2px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.victory-overlay.visible { display: flex; }
+
+.victory-box {
+  text-align: center;
+  padding: 24px 28px;
+  border-radius: 16px;
+  background: radial-gradient(1200px 600px at center, rgba(255,0,0,0.15), rgba(0,0,0,0.75));
+  border: 2px solid #a10000;
+  box-shadow: 0 0 40px rgba(255,0,0,0.35), inset 0 0 20px rgba(255,0,0,0.18);
+}
+
+.victory-title {
+  font-size: 42px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #b30000, 0 0 30px #330000;
+  margin-bottom: 8px;
+}
+.victory-subtitle {
+  font-size: 16px;
+  color: #ddd;
+  margin-bottom: 18px;
+}
+
+.btn-arcade {
+  appearance: none;
+  border: 2px solid #ff1a1a;
+  background: #0b0000;
+  color: #fff;
+  padding: 10px 16px;
+  margin: 0 8px;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px #ff0000;
+  box-shadow: 0 0 12px rgba(255,0,0,0.35), inset 0 0 8px rgba(255,0,0,0.15);
+  transition: transform .08s ease;
+}
+.btn-arcade:hover { transform: scale(1.06); }
+.btn-arcade.secondary {
+  border-color: #808080;
+  text-shadow: 0 0 6px #aaaaaa;
+  box-shadow: 0 0 12px rgba(160,160,160,0.3), inset 0 0 8px rgba(160,160,160,0.15);
+}
+
+/* Clignotement arcade */
+@keyframes blinkArcade {
+  0%, 100% { text-shadow: 0 0 10px #ff0000, 0 0 20px #b30000, 0 0 30px #330000; transform: scale(1.02); }
+  50% { text-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff1a1a, 0 0 60px #990000; transform: scale(1.06); }
+}
+.blink-arcade {
+  animation: blinkArcade 0.9s infinite;
+}
+
+.token { user-select:none; -webkit-user-drag:none; filter:drop-shadow(0 2px 2px rgba(0,0,0,.35)); }
+
+.victory-overlay{ position:fixed; inset:0; background:rgba(5,0,10,.6); backdrop-filter:blur(2px); display:none; align-items:center; justify-content:center; z-index:50; }
+.victory-overlay.visible{ display:flex; }
+.victory-box{ text-align:center; padding:24px 28px; border-radius:16px; background:radial-gradient(1200px 600px at center, rgba(255,0,0,.15), rgba(0,0,0,.75)); border:2px solid #a10000; box-shadow:0 0 40px rgba(255,0,0,.35), inset 0 0 20px rgba(255,0,0,.18); }
+.victory-title{ font-size:42px; font-weight:900; color:#fff; letter-spacing:2px; text-shadow:0 0 10px #ff0000, 0 0 20px #b30000, 0 0 30px #330000; margin-bottom:8px; }
+.victory-subtitle{ font-size:16px; color:#ddd; margin-bottom:18px; }
+.btn-arcade{ appearance:none; border:2px solid #ff1a1a; background:#0b0000; color:#fff; padding:10px 16px; margin:0 8px; border-radius:10px; font-weight:800; cursor:pointer; text-transform:uppercase; text-shadow:0 0 6px #ff0000; box-shadow:0 0 12px rgba(255,0,0,.35), inset 0 0 8px rgba(255,0,0,.15); transition:transform .08s ease; }
+.btn-arcade:hover{ transform:scale(1.06); }
+.btn-arcade.secondary{ border-color:#808080; text-shadow:0 0 6px #aaa; box-shadow:0 0 12px rgba(160,160,160,.3), inset 0 0 8px rgba(160,160,160,.15); }
+@keyframes blinkArcade{ 0%,100%{ text-shadow:0 0 10px #ff0000,0 0 20px #b30000,0 0 30px #330000; transform:scale(1.02);} 50%{ text-shadow:0 0 20px #ff4d4d,0 0 40px #ff1a1a,0 0 60px #990000; transform:scale(1.06);} }
+.blink-arcade{ animation:blinkArcade .9s infinite; }
