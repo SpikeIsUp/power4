@@ -13,7 +13,7 @@ import (
 const historyFile = "data/history.json"
 
 type HistoryItem struct {
-	ResultLine string    `json:"resultLine"` // ex: "✅ Kevin a battu Lucas — 29/10/2025 16:42"
+	ResultLine string    `json:"resultLine"`
 	CreatedAt  time.Time `json:"createdAt"`
 }
 

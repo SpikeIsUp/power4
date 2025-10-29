@@ -19,8 +19,6 @@ type Scoreboard struct {
 	Entries []ScoreEntry `json:"entries"`
 }
 
-// --- fichiers / chargement / sauvegarde ---
-
 func loadScores() Scoreboard {
 	_ = ensureDataDir()
 	var s Scoreboard
@@ -37,15 +35,20 @@ func loadScores() Scoreboard {
 func saveScores(s Scoreboard) error {
 	_ = ensureDataDir()
 	b, err := json.MarshalIndent(s, "", "  ")
-	if err != nil { return err }
+	if err != nil {
+		return err
+	}
 	tmp := scoresFile + ".tmp"
-	if err := os.WriteFile(tmp, b, 0o644); err != nil { return err }
+	if err := os.WriteFile(tmp, b, 0o644); err != nil {
+		return err
+	}
 	return os.Rename(tmp, scoresFile)
 }
 
-// Incrémente la victoire d'un joueur, crée l'entrée si besoin, puis trie desc
 func incrementWin(name string) {
-	if name == "" { return }
+	if name == "" {
+		return
+	}
 	s := loadScores()
 	found := false
 	for i := range s.Entries {
@@ -67,9 +70,6 @@ func incrementWin(name string) {
 	_ = saveScores(s)
 }
 
-// --- pages / actions ---
-
-// GET /players  → affiche le classement
 func Players(w http.ResponseWriter, r *http.Request) {
 	s := loadScores()
 	path := filepath.Join("template", "players.html")
@@ -78,7 +78,8 @@ func Players(w http.ResponseWriter, r *http.Request) {
 	})
 	t, err := t.ParseFiles(path)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError); return
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
 	}
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	if err := t.Execute(w, s); err != nil {
@@ -86,11 +87,10 @@ func Players(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-
-// POST /clear-scores  → remet le classement à zéro
 func ClearScores(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
-		http.Error(w, "method not allowed", http.StatusMethodNotAllowed); return
+		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
+		return
 	}
 	_ = saveScores(Scoreboard{Entries: []ScoreEntry{}})
 	http.Redirect(w, r, "/players", http.StatusSeeOther)

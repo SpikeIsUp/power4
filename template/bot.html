@@ -7,7 +7,7 @@
     <title>Puissance 4 - IA & Difficulté</title>
   </head>
   <body>
-    <!-- Gear et Menu -->
+
     <img
       class="gear"
       id="gear"
@@ -29,10 +29,8 @@
       </ul>
     </div>
 
-    <!-- Indicateur de tour -->
     <div id="turn-indicator">Tour du Rouge</div>
 
-    <!-- Plateau -->
     <div class="puissance4">
       <svg
         viewBox="0 0 675 575"
@@ -55,7 +53,7 @@
           <mask id="trous">
             <rect width="675" height="575" fill="white" rx="80" ry="80" />
             <g fill="black">
-              <!-- 7 colonnes × 6 lignes -->
+
               <circle cx="65" cy="80" r="34" />
               <circle cx="65" cy="163" r="34" />
               <circle cx="65" cy="246" r="34" />
@@ -127,7 +125,6 @@
         />
       </svg>
 
-      <!-- Colonnes cliquables -->
       <div class="colonne" data-col="0" style="left: 4.55%"></div>
       <div class="colonne" data-col="1" style="left: 18.06%"></div>
       <div class="colonne" data-col="2" style="left: 31.5%"></div>
@@ -137,11 +134,9 @@
       <div class="colonne" data-col="6" style="left: 85.31%"></div>
     </div>
 
-    <!-- Scripts -->
     <script src="../static/js/ia.js"></script>
     <script src="../static/js/main_ia.js"></script>
 
-    <!-- Menu -->
     <script>
       const gear = document.getElementById("gear");
       const menu = document.querySelector(".menu");
