@@ -1,8 +1,8 @@
 // === Repère exact du plateau (viewBox 675x575) ===
 const cx = [65, 156, 247, 338, 429, 520, 610]; // centres X des 7 colonnes
-const cy = [80, 163, 246, 329, 412, 495];      // centres Y des 6 lignes
-const R  = 34;                                  // rayon d'un trou
-const D  = R * 2;                               // diamètre = taille jeton
+const cy = [80, 163, 246, 329, 412, 495]; // centres Y des 6 lignes
+const R = 34; // rayon d'un trou
+const D = R * 2; // diamètre = taille jeton
 
 // État local
 let state = {
@@ -22,7 +22,9 @@ let tokenImg = {
 let animating = false;
 
 // ---------- Helpers DOM ----------
-function $svg() { return document.querySelector(".puissance4 svg"); }
+function $svg() {
+  return document.querySelector(".puissance4 svg");
+}
 function $layer() {
   const svg = $svg();
   let g = svg.querySelector("#tokensLayer");
@@ -57,18 +59,20 @@ function ensureBanner() {
 }
 function updateBanner() {
   const banner = ensureBanner();
-  banner.textContent = `${state.names?.[0] || "Joueur 1"} vs ${state.names?.[1] || "Joueur 2"}`;
+  banner.textContent = `${state.names?.[0] || "Joueur 1"} vs ${
+    state.names?.[1] || "Joueur 2"
+  }`;
 }
 
 // ---------- API ----------
 async function fetchState() {
   const res = await fetch("/api/state");
   const data = await res.json();
-  state.grid   = data.grid;
-  state.turn   = data.turn;
-  state.over   = data.over;
+  state.grid = data.grid;
+  state.turn = data.turn;
+  state.over = data.over;
   state.winner = data.winner;
-  state.names  = data.names || state.names;
+  state.names = data.names || state.names;
 
   // Jetons personnalisés renvoyés par le serveur
   if (data.tokenUrls) {
@@ -95,8 +99,15 @@ function renderTokens() {
     for (let j = 0; j < 7; j++) {
       const cell = state.grid[i][j];
       if (cell === 0 || cell === 1) {
-        const img = document.createElementNS("http://www.w3.org/2000/svg", "image");
-        img.setAttributeNS("http://www.w3.org/1999/xlink", "href", tokenImg[cell]);
+        const img = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "image"
+        );
+        img.setAttributeNS(
+          "http://www.w3.org/1999/xlink",
+          "href",
+          tokenImg[cell]
+        );
         img.setAttribute("x", cx[j] - R);
         img.setAttribute("y", cy[i] - R);
         img.setAttribute("width", D);
@@ -147,7 +158,7 @@ async function play(col) {
 
   const r = await fetch("/api/turn", {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ col }),
   });
   const data = await r.json();
@@ -157,11 +168,11 @@ async function play(col) {
   animateDrop(data.col, data.row, data.player);
 
   // Met à jour l’état local (le rendu final sera refait après l’anim)
-  state.grid   = data.grid;
-  state.over   = data.over;
+  state.grid = data.grid;
+  state.over = data.over;
   state.winner = data.winner;
-  state.turn   = data.nextTurn;
-  state.names  = data.names || state.names;
+  state.turn = data.nextTurn;
+  state.names = data.names || state.names;
   if (data.tokenUrls) {
     tokenImg[0] = data.tokenUrls[0];
     tokenImg[1] = data.tokenUrls[1];
@@ -190,8 +201,8 @@ async function resetGame() {
 
 // ---------- Overlay de victoire ----------
 function showVictory() {
-  const overlay  = document.getElementById("victoryOverlay");
-  const title    = document.getElementById("victoryTitle");
+  const overlay = document.getElementById("victoryOverlay");
+  const title = document.getElementById("victoryTitle");
   const subtitle = document.getElementById("victorySubtitle");
   if (!overlay || !title) return;
 
@@ -199,9 +210,10 @@ function showVictory() {
     title.textContent = "MATCH NUL";
     if (subtitle) subtitle.textContent = "Rejouer ou retour Menu";
   } else {
-    const txt = state.winner === 0
-      ? `${state.names?.[0] || "Joueur 1"} GAGNE`
-      : `${state.names?.[1] || "Joueur 2"} GAGNE`;
+    const txt =
+      state.winner === 0
+        ? `${state.names?.[0] || "Joueur 1"} GAGNE`
+        : `${state.names?.[1] || "Joueur 2"} GAGNE`;
     title.textContent = txt;
     if (subtitle) subtitle.textContent = "Rejouer ou retour Menu";
   }
@@ -229,15 +241,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const gear = document.getElementById("gear");
   const menu = document.querySelector(".menu");
   if (gear && menu) {
-    gear.addEventListener("click", (e) => { e.stopPropagation(); menu.classList.toggle("active"); });
+    gear.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menu.classList.toggle("active");
+    });
     document.addEventListener("click", (e) => {
-      if (!menu.contains(e.target) && !gear.contains(e.target)) menu.classList.remove("active");
+      if (!menu.contains(e.target) && !gear.contains(e.target))
+        menu.classList.remove("active");
     });
   }
 
   // boutons overlay
   const btnReset = document.getElementById("btnRejouer");
-  const btnMenu  = document.getElementById("btnMenu");
+  const btnMenu = document.getElementById("btnMenu");
   if (btnReset) btnReset.addEventListener("click", resetGame);
-  if (btnMenu)  btnMenu.addEventListener("click", () => (window.location.href = "/"));
+  if (btnMenu)
+    btnMenu.addEventListener("click", () => (window.location.href = "/"));
 });
