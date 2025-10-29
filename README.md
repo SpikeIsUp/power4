@@ -1,7 +1,7 @@
-
-POWER_4
-Jeu de Puissance 4 développé en Go avec interface web
-
+<div align="center">
+  <h1>Power4</h1>
+  <p><strong>Jeu de Puissance 4 développé en Go avec interface web</strong></p>
+</div>
 
 ---
 
