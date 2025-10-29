@@ -7,7 +7,6 @@ import (
 	"path/filepath"
 )
 
-// RenderTemplate rend un fichier depuis /template
 func RenderTemplate(w http.ResponseWriter, tmpl string) error {
 	path := filepath.Join("template", tmpl)
 	log.Println("🧩 Rendu:", path)

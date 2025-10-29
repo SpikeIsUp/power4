@@ -39,9 +39,10 @@ func GameState(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-type playReq struct{ Col int `json:"col"` }
+type playReq struct {
+	Col int `json:"col"`
+}
 
-// 👇 VERSION UNIQUE (avec enregistrement dans l’historique)
 func GamePlayTurn(w http.ResponseWriter, r *http.Request) {
 	ensureGame()
 	if r.Method != http.MethodPost {
@@ -60,11 +61,10 @@ func GamePlayTurn(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Si la partie vient de se terminer, on logue dans l'historique (Option A simple)
 	if res.Over {
 		p1 := res.Names[0]
 		p2 := res.Names[1]
-		now := time.Now().Format("02/01/2006 15:04") // JJ/MM/AAAA HH:MM
+		now := time.Now().Format("02/01/2006 15:04")
 
 		var line string
 		switch res.Winner {
@@ -79,24 +79,23 @@ func GamePlayTurn(w http.ResponseWriter, r *http.Request) {
 	}
 	// ...
 	if res.Over {
-			p1 := res.Names[0]
-			p2 := res.Names[1]
-			now := time.Now().Format("02/01/2006 15:04")
+		p1 := res.Names[0]
+		p2 := res.Names[1]
+		now := time.Now().Format("02/01/2006 15:04")
 
-			var line string
-			switch res.Winner {
-			case 2:
-					line = "➖ Match nul: " + p1 + " vs " + p2 + " — " + now
-			case 0:
-					line = "✅ " + p1 + " a battu " + p2 + " — " + now
-					incrementWin(p1) // <<< ajoute la victoire au classement
-			case 1:
-					line = "✅ " + p2 + " a battu " + p1 + " — " + now
-					incrementWin(p2) // <<< ajoute la victoire au classement
-			}
-			AppendHistory(line)
+		var line string
+		switch res.Winner {
+		case 2:
+			line = "➖ Match nul: " + p1 + " vs " + p2 + " — " + now
+		case 0:
+			line = "✅ " + p1 + " a battu " + p2 + " — " + now
+			incrementWin(p1)
+		case 1:
+			line = "✅ " + p2 + " a battu " + p1 + " — " + now
+			incrementWin(p2)
+		}
+		AppendHistory(line)
 	}
-// ...
 
 	writeJSON(w, http.StatusOK, res)
 }
@@ -114,7 +113,7 @@ func GameReset(w http.ResponseWriter, r *http.Request) {
 type setupReq struct {
 	P1     string `json:"p1"`
 	P2     string `json:"p2"`
-	Token1 string `json:"token1"` // chemin absolu /static/...
+	Token1 string `json:"token1"`
 	Token2 string `json:"token2"`
 }
 

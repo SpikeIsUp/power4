@@ -21,7 +21,6 @@ type History struct {
 	Items []HistoryItem `json:"items"`
 }
 
-// ensure data dir exists
 func ensureDataDir() error {
 	return os.MkdirAll("data", 0o755)
 }
@@ -52,7 +51,6 @@ func saveHistory(h History) error {
 	return os.Rename(tmp, historyFile)
 }
 
-// AppendHistory ajoute une ligne, tronque à 20 éléments (les plus récents en premier)
 func AppendHistory(line string) {
 	h := loadHistory()
 	item := HistoryItem{
@@ -68,7 +66,6 @@ func AppendHistory(line string) {
 	}
 }
 
-// Handler: GET /histo  → rend la page avec la liste
 func Histo(w http.ResponseWriter, r *http.Request) {
 	h := loadHistory()
 
@@ -84,7 +81,6 @@ func Histo(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// Handler: POST /clear-history
 func ClearHistory(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
