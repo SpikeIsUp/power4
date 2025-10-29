@@ -11,7 +11,7 @@
       <h1>Choisissez vos pseudos et jetons</h1>
 
       <form id="pseudoForm">
-        <!-- Joueur 1 -->
+
         <div class="joueur">
           <h2>Joueur 1</h2>
           <input
@@ -41,7 +41,6 @@
           </div>
         </div>
 
-        <!-- Joueur 2 -->
         <div class="joueur">
           <h2>Joueur 2</h2>
           <input
@@ -83,12 +82,10 @@
     <script>
       const form = document.getElementById("pseudoForm");
 
-      // Bouton Menu
       document.getElementById("menuBtn").addEventListener("click", () => {
         window.location.href = "menu.html";
       });
 
-      // Bouton Play
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
