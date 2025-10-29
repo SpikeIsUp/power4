@@ -62,7 +62,7 @@ body {
 .logo {
   position: absolute;
   width: 45vw;
-  top: 10vh;
+  top: 8vh;
   right: 12vw;
   transition: transform 0.3s ease, filter 0.3s ease;
   z-index: 6;
