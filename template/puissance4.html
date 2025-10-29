@@ -1,166 +1,451 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Power Menu</title>
-    <link rel="stylesheet" href="../static/css/home.css" />
-  </head>
-  <body>
-    <img
-      class="background"
-      src="../static/image/fond_bleu_home.png"
-      alt="background"
-    />
+  <div class="puissance4">
+    <svg width="27vw" height="100vh">
+      <defs>
+      <!-- Pattern pour l'image de fond -->
+        <pattern id="plateauImage" patternUnits="userSpaceOnUse" width="27vw" height="100vh">
+          <image href="../static/image/fond_bleu_home.png" x="0" y="0" width="100vw" height="100vh" />
+        </pattern>
 
-    <!-- Partie gauche : plateau -->
-    <div class="gauche">
-      <svg class="plateau" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern
-            id="plateauImage"
-            patternUnits="userSpaceOnUse"
-            width="100%"
-            height="100%"
-          >
-            <image
-              href="../static/image/fond_rouge_power4.png"
-              width="100%"
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-            />
-          </pattern>
-          <mask id="holes">
-            <rect width="100%" height="100%" fill="white" />
-            <circle class="hole" cx="25%" cy="12.5%" r="10%" fill="black" />
-            <circle class="hole" cx="25%" cy="37.5%" r="10%" fill="black" />
-            <circle class="hole" cx="25%" cy="62.5%" r="10%" fill="black" />
-            <circle class="hole" cx="25%" cy="87.5%" r="10%" fill="black" />
-            <circle class="hole" cx="75%" cy="12.5%" r="10%" fill="black" />
-            <circle class="hole" cx="75%" cy="37.5%" r="10%" fill="black" />
-            <circle class="hole" cx="75%" cy="62.5%" r="10%" fill="black" />
-            <circle class="hole" cx="75%" cy="87.5%" r="10%" fill="black" />
-          </mask>
-        </defs>
+      <!-- Masque des trous -->
+       <mask id="trous">
+          <rect width="27vw" height="100vh" fill="white" />
 
-        <!-- Plateau -->
+        <!-- 7 colonnes × 6 lignes -->
+        <!-- Colonnes : 27/7 ≈ 3.857vw -->
+        <!-- Lignes : 100/6 ≈ 16.667vh -->
+        <!-- Rayon : 2vw ou 2vh pour garder les proportions -->
+        
+        <!-- Ligne 1 -->
+          <circle cx="1.9285vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="8.333vh" r="2vw" fill="black" />
+
+        <!-- Ligne 2 -->
+          <circle cx="1.9285vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="25vh" r="2vw" fill="black" />
+
+        <!-- Ligne 3 -->
+          <circle cx="1.9285vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="41.667vh" r="2vw" fill="black" />
+
+        <!-- Ligne 4 -->
+          <circle cx="1.9285vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="58.333vh" r="2vw" fill="black" />
+
+        <!-- Ligne 5 -->
+          <circle cx="1.9285vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="75vh" r="2vw" fill="black" />
+
+        <!-- Ligne 6 -->
+          <circle cx="1.9285vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="91.667vh" r="2vw" fill="black" />
+        </mask>
+      </defs>
+
+    <!-- Plateau avec image et masque -->
+      <rect width="27vw" height="100vh" fill="url(#plateauImage)" mask="url(#trous)" />
+    </svg>
+  </div>
+
+
+  
+
+
+
+  <div class="Puissance 4">
+    <div class="grille">
+       <svg width="700" height="700" rx="45">
+        <mask id="trou" mask-type="luminance">
+          <rect width="700" height="700" fill="white" rx="30"/>
+
+          <circle cx="55" cy="50" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="145" cy="50" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="235" cy="50" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="325" cy="50" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="415" cy="50" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="505" cy="50" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="595" cy="50" r="35" fill="black" fill-opacity="0"/>
+              
+          <circle cx="55" cy="140" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="145" cy="140" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="235" cy="140" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="325" cy="140" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="415" cy="140" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="505" cy="140" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="595" cy="140" r="35" fill="black" fill-opacity="0"/>
+                
+          <circle cx="55" cy="230" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="145" cy="230" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="235" cy="230" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="325" cy="230" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="415" cy="230" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="505" cy="230" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="595" cy="230" r="35" fill="black" fill-opacity="0"/>
+
+          <circle cx="55" cy="320" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="145" cy="320" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="235" cy="320" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="325" cy="320" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="415" cy="320" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="505" cy="320" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="595" cy="320" r="35" fill="black" fill-opacity="0"/>
+              
+          <circle cx="55" cy="410" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="145" cy="410" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="235" cy="410" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="325" cy="410" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="415" cy="410" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="505" cy="410" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="595" cy="410" r="35" fill="black" fill-opacity="0"/>
+          
+          <circle cx="55" cy="500" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="145" cy="500" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="235" cy="500" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="325" cy="500" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="415" cy="500" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="505" cy="500" r="35" fill="black" fill-opacity="0"/>
+          <circle cx="595" cy="500" r="35" fill="black" fill-opacity="0"/>
+        </mask>
         <rect
-          width="100%"
-          height="100%"
-          fill="url(#plateauImage)"
-          mask="url(#holes)"
+          width="1000"
+          height="2000"
+          rx="30"
+          ry="30"
+          fill="#005221"
+          mask="url(#trou)"
         />
-
-        <image
-          id="jeton1"
-          href="../static/image/Jetons/Jeton2.png"
-          x="8.4%"
-          y="-3.9%"
-          width="33.3%"
-          height="33.3%"
-          style="cursor: pointer"
-        />
-        <image
-          id="jeton2"
-          href="../static/image/Jetons/Jeton2.png"
-          x="8.4%"
-          y="71%"
-          width="33.3%"
-          height="33.3%"
-          style="cursor: pointer"
-        />
-        <image
-          id="jeton3"
-          href="../static/image/Jetons/Jeton3.png"
-          x="58.5%"
-          y="21.23%"
-          width="33%"
-          height="33%"
-          style="cursor: pointer"
-        />
-        <image
-          id="jeton4"
-          href="../static/image/Jetons/Jeton4.png"
-          x="8.6%"
-          y="21.23%"
-          width="33.2%"
-          height="33.2%"
-          style="cursor: pointer"
-        />
-        <image
-          id="jeton5"
-          href="../static/image/Jetons/Jeton5.png"
-          x="8.6%"
-          y="46.2%"
-          width="33%"
-          height="33%"
-          style="cursor: pointer"
-        />
-        <image
-          id="jeton6"
-          href="../static/image/Jetons/Jeton2.png"
-          x="58.4%"
-          y="46%"
-          width="33.3%"
-          height="33.3%"
-          style="cursor: pointer"
-        />
-        <image
-          id="jeton7"
-          href="../static/image/Jetons/Jeton2.png"
-          x="58.4%"
-          y="71%"
-          width="33.3%"
-          height="33.3%"
-          style="cursor: pointer"
-        />
+        rect width="1000" height="2000" rx="30" ry="30" fill="url(#plateauImage)" mask="url(#trous)" />
       </svg>
     </div>
-    <!-- Partie droite : menu -->
-    <div class="droite">
-      <img
-        class="logo"
-        src="../static/image/power4-logo-white.svg"
-        alt="logo"
-      />
-      <img
-        class="gear"
-        id="gearBtn"
-        src="../static/icon/icons8-menu.svg"
-        alt="Menu"
-      />
-      <div class="menu-deroulant">
-        <ul>
-          <li>Historique</li>
-          <li>Contact</li>
-          <li>À propos</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Script -->
-    <script>
-      // Menu déroulant
-      const gear = document.getElementById("gearBtn");
-      const menu = document.querySelector(".menu-deroulant");
-      gear.addEventListener("click", (e) => {
-        e.stopPropagation();
-        menu.classList.toggle("active");
-      });
-      document.addEventListener("click", (e) => {
-        if (!menu.contains(e.target) && !gear.contains(e.target))
-          menu.classList.remove("active");
-      });
 
-      // 7 jetons cliquables
-      for (let i = 1; i <= 7; i++) {
-        const jeton = document.getElementById("jeton" + i);
-        if (jeton) {
-          jeton.addEventListener("click", () =>
-            alert("Jeton " + i + " cliqué !")
-          );
-        }
-      }
-    </script>
-  </body>
-</html>
+
+
+
+
+
+
+
+
+    <div class="puissance4">
+  <svg viewBox="0 0 700 600" preserveAspectRatio="xMidYMid meet" style="width:27vw; height:auto;">
+    <defs>
+      <!-- Image de fond -->
+      <pattern id="plateauImage" patternUnits="userSpaceOnUse" width="700" height="600">
+        <image href="../static/image/fond_bleu_home.png" width="700" height="600" />
+      </pattern>
+
+      <!-- Masque des trous -->
+      <mask id="trous">
+        <!-- Fond noir = masqué -->
+        <rect width="700" height="600" fill="black" rx="40" ry="40" />
+
+        <!-- Trous blancs = transparents -->
+        <g fill="white">
+          <!-- Espacement horizontal et vertical -->
+          <!-- 7 colonnes, 6 lignes -->
+          <!-- Marges horizontales = 50px ; verticales = 50px -->
+          <!-- Espace horizontal ≈ 100px, vertical ≈ 100px -->
+
+          <!-- Ligne 1 -->
+          <circle cx="100" cy="100" r="40" />
+          <circle cx="200" cy="100" r="40" />
+          <circle cx="300" cy="100" r="40" />
+          <circle cx="400" cy="100" r="40" />
+          <circle cx="500" cy="100" r="40" />
+          <circle cx="600" cy="100" r="40" />
+          <circle cx="700" cy="100" r="40" />
+
+          <!-- Ligne 2 -->
+          <circle cx="100" cy="200" r="40" />
+          <circle cx="200" cy="200" r="40" />
+          <circle cx="300" cy="200" r="40" />
+          <circle cx="400" cy="200" r="40" />
+          <circle cx="500" cy="200" r="40" />
+          <circle cx="600" cy="200" r="40" />
+          <circle cx="700" cy="200" r="40" />
+
+          <!-- Ligne 3 -->
+          <circle cx="100" cy="300" r="40" />
+          <circle cx="200" cy="300" r="40" />
+          <circle cx="300" cy="300" r="40" />
+          <circle cx="400" cy="300" r="40" />
+          <circle cx="500" cy="300" r="40" />
+          <circle cx="600" cy="300" r="40" />
+          <circle cx="700" cy="300" r="40" />
+
+          <!-- Ligne 4 -->
+          <circle cx="100" cy="400" r="40" />
+          <circle cx="200" cy="400" r="40" />
+          <circle cx="300" cy="400" r="40" />
+          <circle cx="400" cy="400" r="40" />
+          <circle cx="500" cy="400" r="40" />
+          <circle cx="600" cy="400" r="40" />
+          <circle cx="700" cy="400" r="40" />
+
+          <!-- Ligne 5 -->
+          <circle cx="100" cy="500" r="40" />
+          <circle cx="200" cy="500" r="40" />
+          <circle cx="300" cy="500" r="40" />
+          <circle cx="400" cy="500" r="40" />
+          <circle cx="500" cy="500" r="40" />
+          <circle cx="600" cy="500" r="40" />
+          <circle cx="700" cy="500" r="40" />
+
+          <!-- Ligne 6 -->
+          <circle cx="100" cy="600" r="40" />
+          <circle cx="200" cy="600" r="40" />
+          <circle cx="300" cy="600" r="40" />
+          <circle cx="400" cy="600" r="40" />
+          <circle cx="500" cy="600" r="40" />
+          <circle cx="600" cy="600" r="40" />
+          <circle cx="700" cy="600" r="40" />
+        </g>
+      </mask>
+    </defs>
+
+    <!-- Plateau -->
+    <rect width="700" height="600" fill="url(#plateauImage)" mask="url(#trous)" rx="40" ry="40" />
+  </svg>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="puissance4">
+     <svg width="700" height="700" rx="45" ry="45">
+      <defs>
+      <!-- Pattern pour l'image de fond -->
+        <pattern id="plateauImage" patternUnits="userSpaceOnUse" width="100%" height="100%">
+          <image href="../static/image/fond_bleu_home.png" x="0" y="0" width="100%" height="100%" rx="30" ry="30"/>
+        </pattern>
+
+      <!-- Masque des trous -->
+       <mask id="trous">
+          <rect width="700" height="700" fill="white" rx="30" ry="30"/>
+
+        <!-- 7 colonnes × 6 lignes -->
+        <!-- Colonnes : 27/7 ≈ 3.857vw -->
+        <!-- Lignes : 100/6 ≈ 16.667vh -->
+        <!-- Rayon : 2vw ou 2vh pour garder les proportions -->
+        
+        <!-- Ligne 1 -->
+          <circle cx="1.9285vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="8.333vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="8.333vh" r="2vw" fill="black" />
+
+        <!-- Ligne 2 -->
+          <circle cx="1.9285vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="25vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="25vh" r="2vw" fill="black" />
+
+        <!-- Ligne 3 -->
+          <circle cx="1.9285vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="41.667vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="41.667vh" r="2vw" fill="black" />
+
+        <!-- Ligne 4 -->
+          <circle cx="1.9285vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="58.333vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="58.333vh" r="2vw" fill="black" />
+
+        <!-- Ligne 5 -->
+          <circle cx="1.9285vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="75vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="75vh" r="2vw" fill="black" />
+
+        <!-- Ligne 6 -->
+          <circle cx="1.9285vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="5.7855vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="9.642vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="13.5vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="17.357vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="21.214vw" cy="91.667vh" r="2vw" fill="black" />
+          <circle cx="25.071vw" cy="91.667vh" r="2vw" fill="black" />
+        </mask>
+      </defs>
+
+    <!-- Plateau avec image et masque -->
+      <rect width="1000" height="2000" rx="30" ry="30" fill="url(#plateauImage)" mask="url(#trous)" />
+    </svg>
+  </div>
+
+
+
+
+<circle cx="65" cy="80" r="34" />
+          <circle cx="156" cy="80" r="34" />
+          <circle cx="247" cy="80" r="34" />
+          <circle cx="338" cy="80" r="34" />
+          <circle cx="429" cy="80" r="34" />
+          <circle cx="520" cy="80" r="34" />
+          <circle cx="610" cy="80" r="34" />
+
+          <circle cx="65" cy="163" r="34" />
+          <circle cx="156" cy="163" r="34" />
+          <circle cx="247" cy="163" r="34" />
+          <circle cx="338" cy="163" r="34" />
+          <circle cx="429" cy="163" r="34" />
+          <circle cx="520" cy="163" r="34" />
+          <circle cx="610" cy="163" r="34" />
+
+          <circle cx="65" cy="246" r="34" />
+          <circle cx="156" cy="246" r="34" />
+          <circle cx="247" cy="246" r="34" />
+          <circle cx="338" cy="246" r="34" />
+          <circle cx="429" cy="246" r="34" />
+          <circle cx="520" cy="246" r="34" />
+          <circle cx="610" cy="246" r="34" />
+
+          <circle cx="65" cy="329" r="34" />
+          <circle cx="156" cy="329" r="34" />
+          <circle cx="247" cy="329" r="34" />
+          <circle cx="338" cy="329" r="34" />
+          <circle cx="429" cy="329" r="34" />
+          <circle cx="520" cy="329" r="34" />
+          <circle cx="610" cy="329" r="34" />
+
+          <circle cx="65" cy="412" r="34" />
+          <circle cx="156" cy="412" r="34" />
+          <circle cx="247" cy="412" r="34" />
+          <circle cx="338" cy="412" r="34" />
+          <circle cx="429" cy="412" r="34" />
+          <circle cx="520" cy="412" r="34" />
+          <circle cx="610" cy="412" r="34" />
+
+          <circle cx="65" cy="495" r="34" />
+          <circle cx="156" cy="495" r="34" />
+          <circle cx="247" cy="495" r="34" />
+          <circle cx="338" cy="495" r="34" />
+          <circle cx="429" cy="495" r="34" />
+          <circle cx="520" cy="495" r="34" />
+          <circle cx="610" cy="495" r="34" />
+
+
+
+
+
+
+
+
+
+
+      
+          
+          
+
+
+          <circle cx="65" cy="80" r="34" />
+          <circle cx="65" cy="163" r="34" />
+          <circle cx="65" cy="246" r="34" />
+          <circle cx="65" cy="329" r="34" />
+          <circle cx="65" cy="412" r="34" />
+          <circle cx="65" cy="495" r="34" />
+
+          <circle cx="156" cy="80" r="34" />
+          <circle cx="156" cy="163" r="34" />
+          <circle cx="156" cy="246" r="34" />
+          <circle cx="156" cy="329" r="34" />
+          <circle cx="156" cy="412" r="34" />
+          <circle cx="156" cy="495" r="34" />
+
+          <circle cx="247" cy="80" r="34" />
+          <circle cx="247" cy="163" r="34" />
+          <circle cx="247" cy="246" r="34" />
+          <circle cx="247" cy="329" r="34" />
+          <circle cx="247" cy="412" r="34" />
+          <circle cx="247" cy="495" r="34" />
+
+          <circle cx="338" cy="80" r="34" />
+          <circle cx="338" cy="163" r="34" />
+          <circle cx="338" cy="246" r="34" />
+          <circle cx="338" cy="329" r="34" />
+          <circle cx="338" cy="412" r="34" />
+          <circle cx="247" cy="495" r="34" />
+          
+          <circle cx="429" cy="80" r="34" />
+          <circle cx="429" cy="163" r="34" />
+          <circle cx="429" cy="246" r="34" />
+          <circle cx="429" cy="329" r="34" />
+          <circle cx="429" cy="412" r="34" />
+          <circle cx="429" cy="495" r="34" />
+
+          <circle cx="520" cy="80" r="34" />
+          <circle cx="520" cy="163" r="34" />
+          <circle cx="520" cy="246" r="34" />
+          <circle cx="520" cy="329" r="34" />
+          <circle cx="520" cy="412" r="34" />
+          <circle cx="520" cy="495" r="34" />
+
+          <circle cx="610" cy="80" r="34" /> 
+          <circle cx="610" cy="163" r="34" />
+          <circle cx="610" cy="246" r="34" />
+          <circle cx="610" cy="329" r="34" />
+          <circle cx="610" cy="412" r="34" />
+          <circle cx="610" cy="495" r="34" />
