@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
+  background: url("../image/fond_bleuciel_player.jpg") no-repeat center/cover;
   margin: 0;
   padding: 0;
 }
@@ -73,16 +73,18 @@ input[type="text"] {
 
 #menuBtn {
   position: fixed; /* fixe par rapport à l'écran */
-  top: 20px;
-  left: 20px;
-  background-color: red;
+  top: 25px;
+  left: 25px;
+  background-color: rgb(57, 75, 95);
   color: white;
+  font-size: 18px;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 30px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  z-index: 1000; /* pour qu'il soit au-dessus du container */
+  z-index: 1000;
+  z-index: 1000;
   transition: background 0.2s;
 }
 
@@ -90,7 +92,6 @@ input[type="text"] {
   background-color: darkred;
 }
 
-/* Bouton Play */
 #playBtn {
   padding: 12px 30px;
   font-size: 16px;

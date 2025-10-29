@@ -2,7 +2,7 @@ body {
   margin: 0;
   height: 100vh;
   font-family: Arial, sans-serif;
-  background: url("../image/fond_vert_player.jpg") no-repeat center/cover;
+  background: url("../image/fond_vert_histo.jpg") no-repeat center/cover;
   display: flex;
   justify-content: center;
   align-items: center;

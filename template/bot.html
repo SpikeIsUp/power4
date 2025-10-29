@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/ia.css" />
+    <title>Puissance 4 – IA vs Joueur</title>
+  </head>
+  <body>
+    <!-- Bouton menu -->
+    <img
+      class="gear"
+      id="gear"
+      src="../static/icon/icons8-menu.svg"
+      alt="gear"
+    />
+
+    <!-- Menu déroulant -->
+    <div class="menu">
+      <ul>
+        <li id="restart">Rejouer</li>
+        <li id="toggle-ai">Activer/Désactiver IA</li>
+        <li>Historique</li>
+        <li>Contact</li>
+        <li>À propos</li>
+        <li>Quitter</li>
+      </ul>
+    </div>
+
+    <!-- Plateau du Puissance 4 -->
+    <div class="puissance4">
+      <svg
+        viewBox="0 0 675 575"
+        preserveAspectRatio="xMidYMid meet"
+        class="plateau"
+      >
+        <defs>
+          <pattern
+            id="plateauImage"
+            patternUnits="userSpaceOnUse"
+            width="675"
+            height="575"
+          >
+            <image
+              href="../static/image/fond_bleu_home.png"
+              width="800"
+              height="575"
+            />
+          </pattern>
+
+          <mask id="trous">
+            <rect width="675" height="575" fill="white" rx="80" ry="80" />
+            <g fill="black">
+              <!-- Trous automatiques -->
+              <script>
+                for (let x = 65, i = 0; x <= 610; x += 91, i++) { for (let y =
+                80; y <= 495; y += 83) { document.write(`<circle cx="${x}"
+                cy="${y}" r="34"/>`); } }
+              </script>
+            </g>
+          </mask>
+        </defs>
+        <rect
+          width="675"
+          height="575"
+          fill="url(#plateauImage)"
+          mask="url(#trous)"
+          rx="80"
+          ry="80"
+        />
+      </svg>
+
+      <!-- Zones cliquables pour chaque colonne -->
+      <div class="colonne" data-col="0" style="left: 4.55%"></div>
+      <div class="colonne" data-col="1" style="left: 18.06%"></div>
+      <div class="colonne" data-col="2" style="left: 31.5%"></div>
+      <div class="colonne" data-col="3" style="left: 44.98%"></div>
+      <div class="colonne" data-col="4" style="left: 58.48%"></div>
+      <div class="colonne" data-col="5" style="left: 71.95%"></div>
+      <div class="colonne" data-col="6" style="left: 85.31%"></div>
+    </div>
+
+    <script src="../static/js/ia.js"></script>
+    <script>
+      // Gestion du menu
+      const gear = document.getElementById("gear");
+      const menu = document.querySelector(".menu");
+
+      gear.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menu.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !gear.contains(e.target)) {
+          menu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

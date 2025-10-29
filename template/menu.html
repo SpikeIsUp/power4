@@ -13,7 +13,6 @@
       alt="background"
     />
 
-    <!-- Partie gauche : plateau -->
     <div class="gauche">
       <svg class="plateau" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -110,7 +109,6 @@
       </svg>
     </div>
 
-    <!-- Partie droite : menu -->
     <div class="droite">
       <img class="logo" src="../static/image/logo.png" alt="logo" />
       <img
@@ -128,9 +126,7 @@
       </div>
     </div>
 
-    <!-- Script -->
     <script>
-      // Menu déroulant
       const gear = document.getElementById("gearBtn");
       const menu = document.querySelector(".menu-deroulant");
 
@@ -148,15 +144,16 @@
       document.getElementById("jeton1").addEventListener("click", () => {
         location.reload();
       });
-      document
-        .getElementById("jeton2")
-        .addEventListener("click", () => alert("Mode bot bientôt dispo"));
+      document.getElementById("jeton2").addEventListener("click", () => {
+        window.location.href = "bot.html"; // Redirection
+      });
+
       document.getElementById("jeton3").addEventListener("click", () => {
-        window.location.href = "puissance4.html"; // Redirection
+        window.location.href = "puissance4.html";
       });
 
       document.getElementById("jeton4").addEventListener("click", () => {
-        window.location.href = "histo.html"; // Redirection
+        window.location.href = "histo.html";
       });
 
       document
@@ -164,7 +161,7 @@
         .addEventListener("click", () => alert("Mods bientôt dispo"));
 
       document.getElementById("jeton6").addEventListener("click", () => {
-        window.location.href = "players.html"; // Redirection
+        window.location.href = "players.html";
       });
 
       document

@@ -1,9 +1,7 @@
-/* 🎨 Variables */
 :root {
   --menu-right: 30px;
 }
 
-/* 🧍 Structure principale */
 body {
   background-color: #ffffff;
   font-family: "Poppins", sans-serif;
@@ -13,7 +11,6 @@ body {
   overflow: hidden;
 }
 
-/* 🌅 Fond d’écran */
 .background {
   position: absolute;
   width: 100%;
@@ -22,28 +19,25 @@ body {
   z-index: -1;
 }
 
-/* 🎯 Zone gauche : plateau Power4 */
 .gauche {
   width: 27vw;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10; /* Important : au-dessus de la zone droite */
+  z-index: 10; 
   display: flex;
   justify-content: center;
   align-items: center;
-  pointer-events: auto; /* autorise les clics */
+  pointer-events: auto;
 }
 
-/* Plateau SVG */
 .plateau {
   width: 100%;
   height: 100%;
   pointer-events: auto;
 }
 
-/* Permet de cliquer sur les jetons */
 .plateau image,
 .jeton {
   pointer-events: all;
@@ -51,23 +45,20 @@ body {
   transition: transform 0.5s ease-in;
 }
 
-/* 🚫 Les trous ne bloquent pas les clics */
 .hole {
   pointer-events: none;
 }
 
-/* 🎯 Zone droite : logo + menu */
 .droite {
   flex: 1;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 5; /* en dessous du plateau */
+  z-index: 5;
   pointer-events: auto;
 }
 
-/* ⚡ Logo Power4 */
 .logo {
   position: absolute;
   width: 45vw;
@@ -82,7 +73,6 @@ body {
   filter: drop-shadow(0 0 6px #bebebe);
 }
 
-/* ⚙️ Icône du menu (gear) */
 .gear {
   position: absolute;
   top: 20px;
@@ -91,7 +81,7 @@ body {
   height: 45px;
   cursor: pointer;
   transition: transform 0.3s ease, filter 0.3s ease;
-  z-index: 15; /* au-dessus du logo */
+  z-index: 15;
 }
 
 .gear:hover {
@@ -99,7 +89,6 @@ body {
   filter: drop-shadow(0 0 6px #38bdf8);
 }
 
-/* 📜 Menu déroulant */
 .menu-deroulant {
   position: absolute;
   top: 8%;
@@ -155,7 +144,6 @@ body {
   background: #f5f5f5;
 }
 
-/* 📱 Responsive design */
 @media (max-width: 900px) {
   .plateau {
     width: 200px;
